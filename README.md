@@ -1,6 +1,10 @@
-# g16_atbm_httt_2023
-- Thêm FORM_TRUONG_PHONG.cs
-- Thêm form_audit.cs
-- Chỉnh sử file Login.cs (CÓ NOTE)
-- Chỉnh sửa file Connection_func.cs (CÓ NOTE)
-- Chỉnh sửa form_Main.cs
+# Hướng dẫn chạy code
+
+### Bước 1: Mở Oracle và chạy file PROJECT_PH1.sql và ABTM_PROJECT
+### Bước 2: Mở file ATBM.sln trong Visual Studio
+### Bước 3: Tại dòng 42 trong Phanhe1/Connectionfunction.cs:
+```
+String connectionString = @"Data Source=localhost:1521/XE;User ID=username; Password=password;DBA Privilege=SYSDBA;";
+```
+- Thay đổi username và password thành username và password của sysdba trên Oracle 
+### Bước 4: Compile code
