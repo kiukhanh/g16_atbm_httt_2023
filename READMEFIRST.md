@@ -1,0 +1,5 @@
+- Thêm FORM_TRUONG_PHONG.cs
+- Thêm Form_audit.cs
+- Chỉnh sửa Login.cs (có note)
+- Chỉnh sửa Connection_func.cs (có note)
+- Chỉnh sửa Form_Main.cs (hình như có note)
