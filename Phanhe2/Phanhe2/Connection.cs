@@ -79,5 +79,12 @@ namespace Phanhe2
                 }
             }
         }
+        public static void RunORA(string ora)
+        {
+            using (OracleCommand cmd = new OracleCommand(ora, Con))
+            {
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }
