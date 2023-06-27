@@ -34,3 +34,39 @@ E:\HK2 2022-2023\DBMS Security\ATBM_PH2\ChangePasswordForm\WindowsFormsApp1\bin\
 E:\HK2 2022-2023\DBMS Security\ATBM_PH2\ChangePasswordForm\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.xml
 E:\HK2 2022-2023\DBMS Security\ATBM_PH2\ChangePasswordForm\WindowsFormsApp1\bin\Debug\System.ValueTuple.xml
 E:\HK2 2022-2023\DBMS Security\ATBM_PH2\ChangePasswordForm\WindowsFormsApp1\obj\Debug\TaiChinhForm.csproj.CopyComplete
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\EntityFramework.dll
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\System.Buffers.dll
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\System.Memory.dll
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\System.Text.Json.dll
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\System.ValueTuple.dll
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\EntityFramework.xml
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\System.Buffers.xml
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\System.Memory.xml
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\System.Text.Json.xml
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\bin\Debug\System.ValueTuple.xml
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\obj\Debug\TaiChinhForm.csproj.AssemblyReference.cache
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\obj\Debug\TaiChinhForm.csproj.SuggestedBindingRedirects.cache
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\obj\Debug\TaiChinhForm.csproj.GenerateResource.cache
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\obj\Debug\TaiChinhForm.csproj.CoreCompileInputs.cache
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\obj\Debug\TaiChinhForm.csproj.CopyComplete
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\nvqhu\Source\Repos\kiukhanh\g16_atbm_httt_2023\changePwd_TaiChinh\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

@@ -35,7 +35,7 @@ namespace WindowsFormsApp1
         
         private void Form1_Load(object sender, EventArgs e)
         {
-            String conStr = @"DATA SOURCE=localhost:1521/XE" + ";User ID=company;Password=admin";
+            String conStr = @"DATA SOURCE=localhost:1521/XE" + ";User ID=NV025;Password=nv025";
             conn = new OracleConnection(conStr);
         }
 
@@ -70,7 +70,7 @@ namespace WindowsFormsApp1
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = conn;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "DECRYPT_LUONG_WITHOUT_PASS";
+                cmd.CommandText = "company.DECRYPT_LUONG_WITHOUT_PASS";
 
                 cmd.ExecuteNonQuery();
 
@@ -82,7 +82,7 @@ namespace WindowsFormsApp1
             }
             finally
             {
-                string query = "SELECT * FROM NHANVIEN_TC ORDER BY MANV ASC";
+                string query = "SELECT * FROM COMPANY.NHANVIEN_TC ORDER BY MANV ASC";
                 OracleDataAdapter adapter = new OracleDataAdapter(query, conn);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
@@ -112,7 +112,7 @@ namespace WindowsFormsApp1
             }
             finally
             {
-                string query = "SELECT * FROM PHANCONG ORDER BY THOIGIAN ASC";
+                string query = "SELECT * FROM COMPANY.PHANCONG ORDER BY THOIGIAN ASC";
                 OracleDataAdapter adapter = new OracleDataAdapter(query, conn);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
@@ -174,7 +174,7 @@ namespace WindowsFormsApp1
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = conn;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "update_encrypted_luong_phucap";
+                cmd.CommandText = "company.update_encrypted_luong_phucap";
 
                 cmd.Parameters.Add("p_MANV", OracleDbType.Varchar2).Value = username.ToUpper();
                 if(input_sal.Visible)

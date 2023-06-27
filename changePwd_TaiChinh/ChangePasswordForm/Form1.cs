@@ -107,14 +107,15 @@ namespace ChangePasswordForm
                     OracleCommand cmd = new OracleCommand();
                     cmd.Connection = conn;
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "change_Key";
+                    cmd.CommandText = "Company.change_Key";
 
                     cmd.Parameters.Add("v_MANV", OracleDbType.Varchar2).Value = username;
                     cmd.Parameters.Add("old_Password", OracleDbType.Varchar2).Value = input_curpwd.Text;
                     cmd.Parameters.Add("new_Password", OracleDbType.Varchar2).Value = input_newpwd.Text;
 
                     cmd.ExecuteNonQuery();
-                    
+                    MessageBox.Show("Change password successfully");
+
                 }
                 catch (OracleException ex)
                 {
@@ -123,10 +124,6 @@ namespace ChangePasswordForm
                     {
                         MessageBox.Show("Credential is invalid");
                         input_usn.Clear();
-                    }
-                    else if (ex.Message.Contains("insufficient privileges"))
-                    {
-                        
                     }
                     else if (ex.Message.Contains("MAT KHAU CU KHONG DUNG"))
                     {
@@ -138,7 +135,7 @@ namespace ChangePasswordForm
                     }
                     else 
                     {
-                        MessageBox.Show("Please fill in all the required information");
+                        MessageBox.Show(ex.Message);
                     }
                 }
                 finally
@@ -147,7 +144,7 @@ namespace ChangePasswordForm
                     input_newpwd.Clear();
                     input_confirmpwd.Clear();
                     input_curpwd.Clear();
-                    MessageBox.Show("Change password successfully");
+                    input_usn.Focus();
                     conn.Close();
                 }
             }
@@ -157,6 +154,7 @@ namespace ChangePasswordForm
                 input_newpwd.Clear();
                 input_confirmpwd.Clear();
                 input_curpwd.Clear();
+                input_usn.Focus();
                 MessageBox.Show("New password and Confirm password do not match");
             }
                 
