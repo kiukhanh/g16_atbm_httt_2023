@@ -32,6 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btn_canhan = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             this.btn_phancong = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
@@ -45,23 +47,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.main_tp_panel = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btn_canhan = new Guna.UI2.WinForms.Guna2Button();
             this.dgv_nhanvien_tp = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
+            this.guna2Panel2.SuspendLayout();
             this.guna2Panel7.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nhanvien_tp)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
+            this.guna2Panel1.Controls.Add(this.guna2Button1);
             this.guna2Panel1.Controls.Add(this.guna2Panel2);
             this.guna2Panel1.Controls.Add(this.guna2Panel7);
             this.guna2Panel1.Controls.Add(this.guna2Panel6);
@@ -73,6 +75,32 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(289, 566);
             this.guna2Panel1.TabIndex = 2;
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.Controls.Add(this.btn_canhan);
+            this.guna2Panel2.Location = new System.Drawing.Point(3, 442);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(283, 58);
+            this.guna2Panel2.TabIndex = 2;
+            // 
+            // btn_canhan
+            // 
+            this.btn_canhan.BorderColor = System.Drawing.Color.White;
+            this.btn_canhan.BorderThickness = 2;
+            this.btn_canhan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_canhan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_canhan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_canhan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_canhan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
+            this.btn_canhan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_canhan.ForeColor = System.Drawing.Color.White;
+            this.btn_canhan.Location = new System.Drawing.Point(3, 4);
+            this.btn_canhan.Name = "btn_canhan";
+            this.btn_canhan.Size = new System.Drawing.Size(277, 51);
+            this.btn_canhan.TabIndex = 0;
+            this.btn_canhan.Text = "THÔNG TIN CÁ NHÂN ";
+            this.btn_canhan.Click += new System.EventHandler(this.btn_canhan_Click);
             // 
             // guna2Panel7
             // 
@@ -230,32 +258,6 @@
             this.main_tp_panel.Size = new System.Drawing.Size(793, 542);
             this.main_tp_panel.TabIndex = 3;
             // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.Controls.Add(this.btn_canhan);
-            this.guna2Panel2.Location = new System.Drawing.Point(3, 442);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(283, 58);
-            this.guna2Panel2.TabIndex = 2;
-            // 
-            // btn_canhan
-            // 
-            this.btn_canhan.BorderColor = System.Drawing.Color.White;
-            this.btn_canhan.BorderThickness = 2;
-            this.btn_canhan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_canhan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_canhan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_canhan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_canhan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
-            this.btn_canhan.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_canhan.ForeColor = System.Drawing.Color.White;
-            this.btn_canhan.Location = new System.Drawing.Point(3, 4);
-            this.btn_canhan.Name = "btn_canhan";
-            this.btn_canhan.Size = new System.Drawing.Size(277, 51);
-            this.btn_canhan.TabIndex = 0;
-            this.btn_canhan.Text = "THÔNG TIN CÁ NHÂN ";
-            this.btn_canhan.Click += new System.EventHandler(this.btn_canhan_Click);
-            // 
             // dgv_nhanvien_tp
             // 
             this.dgv_nhanvien_tp.AllowUserToAddRows = false;
@@ -313,6 +315,24 @@
             this.dgv_nhanvien_tp.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_nhanvien_tp.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderColor = System.Drawing.Color.White;
+            this.guna2Button1.BorderThickness = 2;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(3, 506);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(277, 51);
+            this.guna2Button1.TabIndex = 1;
+            this.guna2Button1.Text = "ĐĂNG XUẤT ";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
             // Form_Main_TP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -325,6 +345,7 @@
             this.Text = "Form_Main_TP";
             this.Load += new System.EventHandler(this.Form_Main_TP_Load);
             this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel7.ResumeLayout(false);
             this.guna2Panel6.ResumeLayout(false);
             this.guna2Panel5.ResumeLayout(false);
@@ -332,7 +353,6 @@
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nhanvien_tp)).EndInit();
             this.ResumeLayout(false);
 
@@ -357,5 +377,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Button btn_canhan;
         private Guna.UI2.WinForms.Guna2DataGridView dgv_nhanvien_tp;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

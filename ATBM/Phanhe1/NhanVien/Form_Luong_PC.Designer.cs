@@ -68,6 +68,7 @@
             this.btn_thoat.Size = new System.Drawing.Size(117, 34);
             this.btn_thoat.TabIndex = 7;
             this.btn_thoat.Text = "Thoát";
+            this.btn_thoat.Click += new System.EventHandler(this.btn_thoat_Click);
             // 
             // guna2Panel2
             // 
@@ -101,12 +102,14 @@
             this.txt_phucap.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txt_phucap.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_phucap.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_phucap.ForeColor = System.Drawing.Color.Black;
             this.txt_phucap.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_phucap.Location = new System.Drawing.Point(116, 13);
             this.txt_phucap.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_phucap.Name = "txt_phucap";
             this.txt_phucap.PasswordChar = '\0';
             this.txt_phucap.PlaceholderText = "";
+            this.txt_phucap.ReadOnly = true;
             this.txt_phucap.SelectedText = "";
             this.txt_phucap.Size = new System.Drawing.Size(229, 36);
             this.txt_phucap.TabIndex = 1;
@@ -142,12 +145,14 @@
             this.txt_luong.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txt_luong.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_luong.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_luong.ForeColor = System.Drawing.Color.Black;
             this.txt_luong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_luong.Location = new System.Drawing.Point(116, 13);
             this.txt_luong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_luong.Name = "txt_luong";
             this.txt_luong.PasswordChar = '\0';
             this.txt_luong.PlaceholderText = "";
+            this.txt_luong.ReadOnly = true;
             this.txt_luong.SelectedText = "";
             this.txt_luong.Size = new System.Drawing.Size(229, 36);
             this.txt_luong.TabIndex = 1;

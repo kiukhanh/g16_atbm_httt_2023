@@ -31,6 +31,8 @@ namespace WindowsFormsApp1
             input_sal.KeyDown += input_sal_KeyDown;
             input_sal.KeyPress += txtbox_KeyPress;
             input_bonus.KeyPress += txtbox_KeyPress;
+            
+            
 
         }
         
@@ -91,7 +93,7 @@ namespace WindowsFormsApp1
             sal_txtbox.Visible = false;
             bonus_txtbox.Visible = false;
             input_bonus.Visible = false;
-            main_panel_tc.Visible = false;
+            //main_panel_tc.Visible = false;
 
             string query = "SELECT * FROM COMPANY.PHANCONG ORDER BY THOIGIAN ASC";
             OracleDataAdapter adapter = new OracleDataAdapter(query, Connectionfunction.Con);
@@ -111,7 +113,7 @@ namespace WindowsFormsApp1
             btn_enter.Visible = true;
             bonus_txtbox.Visible = false;
             input_bonus.Visible = false;
-            main_panel_tc.Visible=false;
+            //main_panel_tc.Visible=false;
            
         }
 
@@ -200,32 +202,35 @@ namespace WindowsFormsApp1
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b')
                 e.Handled = true;
         }
-        private Form activeform = null;
-        private void openChildForm(Form childForm)
-        {
-            if (activeform != null)
-                activeform.Close();
-            activeform = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            main_panel_tc.Controls.Add(childForm);
-            main_panel_tc.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-        }
+      
         private void button1_Click(object sender, EventArgs e)
         {
-            openChildForm(new Form_NV_NV());
+            Form_NV_PB pB= new Form_NV_PB();
+            pB.Show();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            openChildForm(new Form_NV_PB());
+           Form_NV_DA pb= new Form_NV_DA();
+            pb.Show();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            openChildForm(new Form_NV_NV());
+            Form_NV_NV pb= new Form_NV_NV();
+            pb.Show();
+        }
+
+        private void Form_Main_TC_Load(object sender, EventArgs e)
+        {
+            button3.PerformClick();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login form = new Login();
+            form.Show();
         }
     }
 

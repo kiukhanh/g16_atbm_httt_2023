@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btn_phancong = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.btn_dean = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
@@ -42,18 +40,24 @@
             this.label1 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.main_nv_panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.btn_phancong = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btn_dangxuat = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
-            this.guna2Panel7.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            this.guna2Panel7.SuspendLayout();
+            this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
+            this.guna2Panel1.Controls.Add(this.guna2Panel2);
             this.guna2Panel1.Controls.Add(this.guna2Panel7);
             this.guna2Panel1.Controls.Add(this.guna2Panel6);
             this.guna2Panel1.Controls.Add(this.guna2Panel5);
@@ -64,32 +68,6 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(289, 566);
             this.guna2Panel1.TabIndex = 0;
-            // 
-            // guna2Panel7
-            // 
-            this.guna2Panel7.Controls.Add(this.btn_phancong);
-            this.guna2Panel7.Location = new System.Drawing.Point(3, 385);
-            this.guna2Panel7.Name = "guna2Panel7";
-            this.guna2Panel7.Size = new System.Drawing.Size(283, 58);
-            this.guna2Panel7.TabIndex = 1;
-            // 
-            // btn_phancong
-            // 
-            this.btn_phancong.BorderColor = System.Drawing.Color.White;
-            this.btn_phancong.BorderThickness = 2;
-            this.btn_phancong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_phancong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_phancong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_phancong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_phancong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
-            this.btn_phancong.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_phancong.ForeColor = System.Drawing.Color.White;
-            this.btn_phancong.Location = new System.Drawing.Point(3, 0);
-            this.btn_phancong.Name = "btn_phancong";
-            this.btn_phancong.Size = new System.Drawing.Size(277, 51);
-            this.btn_phancong.TabIndex = 0;
-            this.btn_phancong.Text = "PHAN CONG";
-            this.btn_phancong.Click += new System.EventHandler(this.btn_phancong_Click);
             // 
             // guna2Panel6
             // 
@@ -221,6 +199,58 @@
             this.main_nv_panel.Size = new System.Drawing.Size(806, 565);
             this.main_nv_panel.TabIndex = 1;
             // 
+            // btn_phancong
+            // 
+            this.btn_phancong.BorderColor = System.Drawing.Color.White;
+            this.btn_phancong.BorderThickness = 2;
+            this.btn_phancong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_phancong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_phancong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_phancong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_phancong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
+            this.btn_phancong.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_phancong.ForeColor = System.Drawing.Color.White;
+            this.btn_phancong.Location = new System.Drawing.Point(3, 0);
+            this.btn_phancong.Name = "btn_phancong";
+            this.btn_phancong.Size = new System.Drawing.Size(277, 51);
+            this.btn_phancong.TabIndex = 0;
+            this.btn_phancong.Text = "PHAN CONG";
+            this.btn_phancong.Click += new System.EventHandler(this.btn_phancong_Click);
+            // 
+            // guna2Panel7
+            // 
+            this.guna2Panel7.Controls.Add(this.btn_phancong);
+            this.guna2Panel7.Location = new System.Drawing.Point(3, 385);
+            this.guna2Panel7.Name = "guna2Panel7";
+            this.guna2Panel7.Size = new System.Drawing.Size(283, 58);
+            this.guna2Panel7.TabIndex = 1;
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.Controls.Add(this.btn_dangxuat);
+            this.guna2Panel2.Location = new System.Drawing.Point(6, 449);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(283, 58);
+            this.guna2Panel2.TabIndex = 2;
+            // 
+            // btn_dangxuat
+            // 
+            this.btn_dangxuat.BorderColor = System.Drawing.Color.White;
+            this.btn_dangxuat.BorderThickness = 2;
+            this.btn_dangxuat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_dangxuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_dangxuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_dangxuat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_dangxuat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
+            this.btn_dangxuat.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_dangxuat.ForeColor = System.Drawing.Color.White;
+            this.btn_dangxuat.Location = new System.Drawing.Point(0, 0);
+            this.btn_dangxuat.Name = "btn_dangxuat";
+            this.btn_dangxuat.Size = new System.Drawing.Size(277, 51);
+            this.btn_dangxuat.TabIndex = 0;
+            this.btn_dangxuat.Text = "ĐĂNG XUẤT";
+            this.btn_dangxuat.Click += new System.EventHandler(this.btn_dangxuat_Click);
+            // 
             // Form_MainNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -232,13 +262,14 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form_MainNV_Load);
             this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel7.ResumeLayout(false);
             this.guna2Panel6.ResumeLayout(false);
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            this.guna2Panel7.ResumeLayout(false);
+            this.guna2Panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -252,12 +283,14 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2Button btn_nhanvien;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
-        private Guna.UI2.WinForms.Guna2Button btn_phancong;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         private Guna.UI2.WinForms.Guna2Button btn_dean;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private Guna.UI2.WinForms.Guna2Button btn_phongban;
         private System.Windows.Forms.TextBox textBox_ID;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Button btn_dangxuat;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
+        private Guna.UI2.WinForms.Guna2Button btn_phancong;
     }
 }

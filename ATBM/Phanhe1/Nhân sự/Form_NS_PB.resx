@@ -117,15 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="richTextBox1.Text" xml:space="preserve">
-    <value>Để thêm thông tin thì:
-- Nhập tên phòng ban
-- Chọn trưởng phòng cho phòng ban 
-- Nhấn nút thêm 
-
-Để cập nhật phòng ban:
-- Chọn phòng ban trên bảng phòng ban
-- Thay đổi tên phòng ban 
-- Thay đổi trưởng phòng</value>
-  </data>
 </root>

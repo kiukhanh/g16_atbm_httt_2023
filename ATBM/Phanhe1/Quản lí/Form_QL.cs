@@ -164,6 +164,13 @@ namespace Phanhe2
         {
            guna2Button_CaNhan.PerformClick();
         }
+
+        private void btn_dangxuat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login form = new Login();
+            form.Show();
+        }
     }
 }
 

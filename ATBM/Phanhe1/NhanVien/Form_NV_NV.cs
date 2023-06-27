@@ -102,7 +102,7 @@ namespace Phanhe1.NhanVien
         private void btn_xemluong_Click(object sender, EventArgs e)
         {
             Form_Password dangnhap = new Form_Password();
-            dangnhap.ShowDialog();
+            dangnhap.Show();
         }
     }
 }

@@ -16,6 +16,7 @@ namespace Phanhe1.Nhân_sự
         DataTable dtb_trgph;
         DataTable dtb_trgph1;
         string selectedpb;
+        string mapb;
         public Form_NS_PB()
         {
             InitializeComponent();
@@ -36,27 +37,11 @@ namespace Phanhe1.Nhân_sự
         private void Form_NS_PB_Load(object sender, EventArgs e)
         {
             LoadData_pb();
-            string sql2 = "SELECT MANV FROM COMPANY.NHANSU_INSERT_VIEW WHERE VAITRO = 'TP'";
-            dtb_trgph = Connectionfunction.GetDataToTable(sql2);
-            //cho them pb
-            combobox_trgphg.DisplayMember = "MANV";
-            combobox_trgphg.ValueMember = "MANV";
-            combobox_trgphg.DataSource = dtb_trgph;
-            //cho cap nhat
-            comboboc_trg_capnhat.DisplayMember = "MANV";
-            comboboc_trg_capnhat.ValueMember = "MANV";
-            comboboc_trg_capnhat.DataSource = dtb_trgph;
-            
-
-        }
-
-        private void btn_them_pb_Click(object sender, EventArgs e)
-        {
             int count = 0;
             string sql1 = "SELECT COUNT(*) FROM COMPANY.PHONGBAN";
             string temp = Connectionfunction.GetFieldValues(sql1);
             count = Int32.Parse(temp) + 1;
-            string mapb = " ";
+            mapb = " ";
             if (count < 10)
             {
                 mapb = "PB0" + count;
@@ -65,9 +50,23 @@ namespace Phanhe1.Nhân_sự
             {
                 mapb = "PB" + count;
             }
+            txt_maphongban.Text = mapb;
+            
 
-            if (string.IsNullOrEmpty(txt_tenpb.Text) ||
-            string.IsNullOrEmpty(combobox_trgphg.Text))
+            //dtb_trgph = Connectionfunction.GetDataToTable(sql2);
+            //cho cap nhat
+          /*  comboboc_trg_capnhat.DisplayMember = "MANV";
+            comboboc_trg_capnhat.ValueMember = "MANV";
+            comboboc_trg_capnhat.DataSource = dtb_trgph;*/
+
+        }
+
+        private void btn_them_pb_Click(object sender, EventArgs e)
+        {
+            
+
+            if (string.IsNullOrEmpty(txt_tenpb.Text)/* ||
+            string.IsNullOrEmpty(combobox_trgphg.Text)*/)
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -75,12 +74,13 @@ namespace Phanhe1.Nhân_sự
 
             string sql = "alter session set  \"_oracle_script\" = true";
             Connectionfunction.RunORA(sql);
-            DataRowView selectedRow = (DataRowView)combobox_trgphg.SelectedItem;
+           /* DataRowView selectedRow = (DataRowView)combobox_trgphg.SelectedItem;
             string selectedValue = selectedRow["MANV"].ToString();
-
+*/
+          
             try
             {
-                string sql6 = $"BEGIN COMPANY.INSERT_PB('{mapb}','{txt_tenpb.Text}','{selectedValue}'); END;";
+                string sql6 = $"BEGIN COMPANY.INSERT_PB('{mapb}','{txt_tenpb.Text}',NULL); END;";
                 Connectionfunction.RunORA(sql6);
                 MessageBox.Show("Cập nhật thành công!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -96,8 +96,8 @@ namespace Phanhe1.Nhân_sự
         {
             
 
-            if (string.IsNullOrEmpty(txt_phongban_update.Text) ||
-            string.IsNullOrEmpty(comboboc_trg_capnhat.Text))
+            if (string.IsNullOrEmpty(txt_phongban_update.Text) /*||
+            string.IsNullOrEmpty(comboboc_trg_capnhat.Text)*/)
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -105,12 +105,12 @@ namespace Phanhe1.Nhân_sự
 
             string sql = "alter session set  \"_oracle_script\" = true";
             Connectionfunction.RunORA(sql);
-            DataRowView selectedRow = (DataRowView)comboboc_trg_capnhat.SelectedItem;
-            string selectedValue = selectedRow["MANV"].ToString();
+            /*DataRowView selectedRow = (DataRowView)comboboc_trg_capnhat.SelectedItem;
+            string selectedValue = selectedRow["MANV"].ToString();*/
 
             try
             {
-                string sql6 = $"BEGIN COMPANY.UPDATE_PB_NS('{selectedpb}','{txt_phongban_update.Text}','{selectedValue}'); END;";
+                string sql6 = $"BEGIN COMPANY.UPDATE_PB_NS('{selectedpb}','{txt_phongban_update.Text}','{txt_truongphong.Text}'); END;";
                 Connectionfunction.RunORA(sql6);
                 MessageBox.Show("Cập nhật thành công!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -133,8 +133,12 @@ namespace Phanhe1.Nhân_sự
 
             // set giá trị cho các mục    
             txt_phongban_update.Text = dgv_pb_info.CurrentRow.Cells["TENPB"].Value.ToString();
-            string selectedValue = dgv_pb_info.CurrentRow.Cells["TRPHG"].Value.ToString();
-            comboboc_trg_capnhat.SelectedItem = selectedValue;
+            string sql2 = $"SELECT MANV FROM COMPANY.NHANSU_INSERT_VIEW WHERE VAITRO = 'TP'AND PHG = '{selectedpb}'";
+            object result = Connectionfunction.GetDataToText(sql2);
+            string resultText = result != null ? result.ToString() : string.Empty;
+            txt_truongphong.Text = resultText;
+            /*string selectedValue = dgv_pb_info.CurrentRow.Cells["TRPHG"].Value.ToString();
+            comboboc_trg_capnhat.SelectedItem = selectedValue;*/
 
         }
 

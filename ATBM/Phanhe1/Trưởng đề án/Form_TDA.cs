@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
 using Phanhe1;
+using Phanhe1.NhanVien;
 
 namespace Phanhe2
 {
@@ -24,55 +25,46 @@ namespace Phanhe2
             object value = Connectionfunction.GetDataToText(query);
             textBox_ID.Text = "ID: " + value.ToString();
         }
+        private Form activeform = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeform != null)
+                activeform.Close();
+            activeform = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            panel_CaNhan.Controls.Add(childForm);
+            panel_CaNhan.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
 
         private void guna2Button_CaNhan_Click(object sender, EventArgs e)
         {
-            Form_QL ql = new Form_QL();
+           
             panel_CaNhan.Show();
             guna2Button_Luu.Hide();
             guna2Button_Sua.Show();
             guna2DataGridView_QL.Hide();
             panel_DeAn.Hide();
-            textBox_Hoten.Text = ql.GetHoTen();
-            textBox_Hoten.ReadOnly = true;
-            textBox_Phai.Text = ql.GetPhai();
-            textBox_Phai.ReadOnly = true;
-            textBox_Ngsinh.Text = ql.GetNgSinh();
-            textBox_Ngsinh.ReadOnly = true;
-            textBox_DiaChi.Text = ql.GetDiachi();
-            textBox_DiaChi.ReadOnly = true;
-            textBox_SDT.Text = ql.GetSDT();
-            textBox_SDT.ReadOnly = true;
-            textBox_PHG.Text = ql.GetPHG();
-            textBox_PHG.ReadOnly = true;
-            textBox_Luong.Text = ql.GetLuong();
-            textBox_Luong.ReadOnly = true;
-            textBox_NQL.Text = ql.GetNQL();
-            textBox_NQL.ReadOnly = true;
-            textBox_PhuCap.Text = ql.GetPhucap();
-            textBox_PhuCap.ReadOnly = true;
+            openChildForm(new Form_NV_NV());
         }
         DataTable dtTableName = new DataTable();
         private void guna2Button_CongViec_Click(object sender, EventArgs e)
         {
-            panel_CaNhan.Hide();
-            guna2DataGridView_QL.Show();
+            panel_CaNhan.Show();
+            guna2DataGridView_QL.Hide();
             panel_DeAn.Hide();
-            string query = "SELECT * FROM COMPANY.PHANCONG$";
-            dtTableName = Connectionfunction.GetDataToTable(query);
-            guna2DataGridView_QL.DataSource = dtTableName;
-            guna2DataGridView_QL.ReadOnly = true;
+            openChildForm(new Form_NV_PC());
         }
 
         private void guna2Button_PhongBan_Click(object sender, EventArgs e)
         {
-            panel_CaNhan.Hide();
-            guna2DataGridView_QL.Show();
+            panel_CaNhan.Show();
+            guna2DataGridView_QL.Hide();
             panel_DeAn.Hide();
-            string query = "SELECT * FROM COMPANY.PHONGBAN";
-            dtTableName = Connectionfunction.GetDataToTable(query);
-            guna2DataGridView_QL.DataSource = dtTableName;
-            guna2DataGridView_QL.ReadOnly = true;
+            openChildForm(new Form_NV_PB());
         }
 
         private void guna2Button_DeAn_Click(object sender, EventArgs e)
@@ -231,6 +223,13 @@ namespace Phanhe2
             comboBox_MaDA.Items.Clear();
             textBox_TenDA.Clear();
             comboBox_PHG_Sua.Items.Clear();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login form = new Login();
+            form.Show();
         }
     }
 }

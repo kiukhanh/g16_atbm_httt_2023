@@ -84,7 +84,8 @@ namespace Phanhe1
         {
             try
             {
-                string sql = "UPDATE COMPANY.PHANCONG_TP SET THOIGIAN = TO_DATE('" + guna2DateTimePicker2.Value.ToString("dd/MM/yyyy") + "','MM/DD/YYYY') WHERE MADA = '" + guna2ComboBox3.Text + "' AND MANV = '" + guna2ComboBox4.Text + "'";
+                string thoigian = guna2DateTimePicker2.Value.ToString("dd-MM-yyyy"); // Format the date value
+                string sql = "UPDATE COMPANY.PHANCONG_TP SET THOIGIAN = TO_DATE('" + thoigian + "','MM/DD/YYYY') WHERE MADA = '" + guna2ComboBox3.Text + "' AND MANV = '" + guna2ComboBox4.Text + "'";
                 Connectionfunction.RunORA(sql);
                 MessageBox.Show("Update succeed.");
 

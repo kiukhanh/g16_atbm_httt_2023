@@ -32,9 +32,8 @@ namespace Phanhe1.NhanVien
             string taikhoan = txt_taikhoan.Text;
             string matkhau = txt_matkhau.Text;
             Form_Luong_PC luong_PC= new Form_Luong_PC(taikhoan,matkhau);
-            luong_PC.ShowDialog();
-            this .Close();
-            
+            luong_PC.Show();
+            this.Hide();
         }
     }
 }

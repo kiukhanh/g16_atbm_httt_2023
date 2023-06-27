@@ -38,10 +38,12 @@
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.btn_nhanvien_ns = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txt_ID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.main_ns_panel = new Guna.UI2.WinForms.Guna2Panel();
-            this.txt_ID = new System.Windows.Forms.TextBox();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btn_dangxuat = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel7.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
@@ -49,11 +51,13 @@
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
+            this.guna2Panel1.Controls.Add(this.guna2Panel2);
             this.guna2Panel1.Controls.Add(this.guna2Panel7);
             this.guna2Panel1.Controls.Add(this.guna2Panel6);
             this.guna2Panel1.Controls.Add(this.guna2Panel5);
@@ -179,6 +183,18 @@
             this.guna2Panel3.Size = new System.Drawing.Size(286, 208);
             this.guna2Panel3.TabIndex = 0;
             // 
+            // txt_ID
+            // 
+            this.txt_ID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
+            this.txt_ID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_ID.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ID.ForeColor = System.Drawing.Color.White;
+            this.txt_ID.Location = new System.Drawing.Point(51, 167);
+            this.txt_ID.Name = "txt_ID";
+            this.txt_ID.Size = new System.Drawing.Size(196, 27);
+            this.txt_ID.TabIndex = 3;
+            this.txt_ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -209,17 +225,31 @@
             this.main_ns_panel.Size = new System.Drawing.Size(802, 565);
             this.main_ns_panel.TabIndex = 5;
             // 
-            // txt_ID
+            // guna2Panel2
             // 
-            this.txt_ID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
-            this.txt_ID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_ID.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ID.ForeColor = System.Drawing.Color.White;
-            this.txt_ID.Location = new System.Drawing.Point(51, 167);
-            this.txt_ID.Name = "txt_ID";
-            this.txt_ID.Size = new System.Drawing.Size(196, 27);
-            this.txt_ID.TabIndex = 3;
-            this.txt_ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.guna2Panel2.Controls.Add(this.btn_dangxuat);
+            this.guna2Panel2.Location = new System.Drawing.Point(3, 449);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(283, 58);
+            this.guna2Panel2.TabIndex = 6;
+            // 
+            // btn_dangxuat
+            // 
+            this.btn_dangxuat.BorderColor = System.Drawing.Color.White;
+            this.btn_dangxuat.BorderThickness = 2;
+            this.btn_dangxuat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_dangxuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_dangxuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_dangxuat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_dangxuat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
+            this.btn_dangxuat.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_dangxuat.ForeColor = System.Drawing.Color.White;
+            this.btn_dangxuat.Location = new System.Drawing.Point(0, 0);
+            this.btn_dangxuat.Name = "btn_dangxuat";
+            this.btn_dangxuat.Size = new System.Drawing.Size(277, 51);
+            this.btn_dangxuat.TabIndex = 0;
+            this.btn_dangxuat.Text = "ĐĂNG XUẤT";
+            this.btn_dangxuat.Click += new System.EventHandler(this.btn_dangxuat_Click);
             // 
             // Form_Main_NS
             // 
@@ -239,6 +269,7 @@
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            this.guna2Panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -259,5 +290,7 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2Panel main_ns_panel;
         private System.Windows.Forms.TextBox txt_ID;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Button btn_dangxuat;
     }
 }

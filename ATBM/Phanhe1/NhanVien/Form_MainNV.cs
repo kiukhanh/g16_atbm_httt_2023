@@ -60,6 +60,12 @@ namespace Phanhe1
             openChildForm(new Form_NV_PB());
         }
 
-        
+        private void btn_dangxuat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login form = new Login();
+            form.Show();
+            
+        }
     }
 }

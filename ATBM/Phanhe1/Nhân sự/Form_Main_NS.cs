@@ -17,9 +17,7 @@ namespace Phanhe1
         public Form_Main_NS()
         {
             InitializeComponent();
-            string query = "SELECT SYS_CONTEXT('USERENV','SESSION_USER') FROM DUAL";
-            object value = Connectionfunction.GetDataToText(query);
-            txt_ID.Text = "ID: " + value.ToString();
+            
         }
         private Form activeform = null;
         private void openChildForm(Form childForm)
@@ -35,17 +33,13 @@ namespace Phanhe1
             childForm.Show();
         }
 
-        private void Nhân_sự_Load(object sender, EventArgs e)
-        {
-            
-            btn_nhanvien_ns.PerformClick();
-            
-        }
-          
-
+       
         private void Form_Main_NS_Load(object sender, EventArgs e)
         {
-            btn_nhanvien_ns.PerformClick();
+           /* btn_nhanvien_ns.PerformClick();*/
+            string query = "SELECT SYS_CONTEXT('USERENV','SESSION_USER') FROM DUAL";
+            object value = Connectionfunction.GetDataToText(query);
+            txt_ID.Text = "ID: " + value.ToString();
         }
 
         private void btn_nhanvien_ns_Click(object sender, EventArgs e)
@@ -65,8 +59,14 @@ namespace Phanhe1
 
         private void btn_phancong_ns_Click(object sender, EventArgs e)
         {
-                openChildForm(new Form_NV_PC());
-            
+            openChildForm(new Form_NV_PC());
+        }
+
+        private void btn_dangxuat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login form = new Login();
+            form.Show();
         }
     }
 }
