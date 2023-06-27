@@ -19,6 +19,7 @@ namespace Phanhe1
         public FORM_TRUONG_PHONG()
         {
             InitializeComponent();
+            Fill_comboBox();
         }
 
         DataTable table_NVTP = new DataTable();
@@ -42,12 +43,12 @@ namespace Phanhe1
         {
             try
             {
-                if (string.IsNullOrEmpty(textBox12.Text) || string.IsNullOrEmpty(textBox11.Text)|| string.IsNullOrEmpty(textBox13.Text))
+                if (string.IsNullOrEmpty(guna2ComboBox1.Text) || string.IsNullOrEmpty(guna2ComboBox2.Text)|| string.IsNullOrEmpty(guna2DateTimePicker1.Value.ToString("dd/MM/yyyy")))
                 {
                     MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
-                string sql = "INSERT INTO COMPANY.PHANCONG_TP VALUES ('" + textBox12.Text + "','" + textBox11.Text + "',TO_DATE('" + textBox13.Text + "','MM/DD/SYYYY HH24:MI:SS', 'NLS_DATE_LANGUAGE = American'))";
+                string sql = "INSERT INTO COMPANY.PHANCONG_TP VALUES ('" + guna2ComboBox1.Text + "','" + guna2ComboBox2.Text + "',TO_DATE('" + guna2DateTimePicker1.Value.ToString("dd/MM/yyyy") + "','DD/MM/YYYY'))";
                 Connectionfunction.RunORA(sql);
                 MessageBox.Show("Insert succeed.");
 
@@ -65,7 +66,7 @@ namespace Phanhe1
         {
             try
             {
-                string sql = "DELETE FROM COMPANY.PHANCONG_TP WHERE MADA = '" + textBox12.Text + "' AND MANV = '" + textBox11.Text + "'";
+                string sql = "DELETE FROM COMPANY.PHANCONG_TP WHERE MADA = '" + guna2ComboBox3.Text + "' AND MANV = '" + guna2ComboBox4.Text + "'";
                 Connectionfunction.RunORA(sql);
                 MessageBox.Show("Delete succeed.");
 
@@ -83,7 +84,7 @@ namespace Phanhe1
         {
             try
             {
-                string sql = "UPDATE COMPANY.PHANCONG_TP SET THOIGIAN = TO_DATE('" + textBox13.Text + "','MM/DD/SYYYY HH24:MI:SS', 'NLS_DATE_LANGUAGE = American') WHERE MADA = '" + textBox12.Text + "' AND MANV = '" + textBox11.Text + "'";
+                string sql = "UPDATE COMPANY.PHANCONG_TP SET THOIGIAN = TO_DATE('" + guna2DateTimePicker2.Value.ToString("dd/MM/yyyy") + "','MM/DD/YYYY') WHERE MADA = '" + guna2ComboBox3.Text + "' AND MANV = '" + guna2ComboBox4.Text + "'";
                 Connectionfunction.RunORA(sql);
                 MessageBox.Show("Update succeed.");
 
@@ -102,6 +103,43 @@ namespace Phanhe1
             string sql2 = "SELECT * FROM COMPANY.PHANCONG_TP";
             table_PCTP = Connectionfunction.GetDataToTable(sql2);
             dgv_phancong.DataSource = table_PCTP;
+        }
+
+        private void Fill_comboBox()
+        {
+            // lấy tất cả MANV thuộc PB của TP này
+            DataTable NV = new DataTable();
+            string sql = "SELECT * FROM COMPANY.NHANVIEN_TP";
+            NV = Connectionfunction.GetDataToTable(sql);
+            foreach (DataRow row in NV.Rows)
+            {
+                guna2ComboBox2.Items.Add(row["MANV"].ToString());
+            }
+
+
+            DataTable DA = new DataTable();
+            string sql2 = "SELECT * FROM COMPANY.DEAN";
+            DA = Connectionfunction.GetDataToTable(sql2);
+            foreach (DataRow row in DA.Rows)
+            {
+                guna2ComboBox1.Items.Add(row["MADA"].ToString());
+            }
+
+            DataTable DA_daPC = new DataTable();
+            string sql3 = "SELECT DISTINCT MADA FROM COMPANY.PHANCONG_TP";
+            DA_daPC = Connectionfunction.GetDataToTable(sql3);
+            foreach (DataRow row in DA_daPC.Rows)
+            {
+                guna2ComboBox3.Items.Add(row["MADA"].ToString());
+            }
+
+            DataTable NV_daPC = new DataTable();
+            string sql4 = "SELECT DISTINCT MANV FROM COMPANY.PHANCONG_TP";
+            NV_daPC = Connectionfunction.GetDataToTable(sql4);
+            foreach (DataRow row in NV_daPC.Rows)
+            {
+                guna2ComboBox4.Items.Add(row["MANV"].ToString());
+            }
         }
     }
 }

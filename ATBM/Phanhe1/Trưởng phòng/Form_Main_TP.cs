@@ -80,6 +80,25 @@ namespace Phanhe1.Trường_phòng
             textBox_ID.Text = "ID: " + value.ToString();
 
         }
+        /*-------------------NEW--------------------------*/
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            if (PreClosingConfirmation() == System.Windows.Forms.DialogResult.Yes)
+            {
+                Dispose(true);
+                Environment.Exit(0);
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+        private DialogResult PreClosingConfirmation()
+        {
+            DialogResult res = System.Windows.Forms.MessageBox.Show("Are you sure you want to exit?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return res;
+        }
     }
 
 }
