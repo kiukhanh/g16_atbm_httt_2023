@@ -39,8 +39,8 @@ namespace Phanhe1
 
         public static void InitConnection_DBA()
         {
-            String connectionString = @"Data Source=localhost:1521/XE;User ID=<username>; Password=<password>;DBA Privilege=SYSDBA;";
-;            Con = new OracleConnection();
+            String connectionString = @"Data Source=localhost:1521/XE;User ID = sys; Password= 20120305;DBA Privilege=SYSDBA;";
+            Con = new OracleConnection();
             Con.ConnectionString = connectionString;
 
             try
@@ -56,6 +56,8 @@ namespace Phanhe1
                 //MessageBox.Show("Không thể kết nối với DB");
             }
         }
+
+       
 
         public static string GetFieldValues(string ora)
         {
@@ -86,6 +88,22 @@ namespace Phanhe1
                 //{
                 //    MessageBox.Show(ex.ToString());
                 //}
+            }
+        }
+        public static bool RunSql(string sql)
+        {
+            using (OracleCommand cmd = new OracleCommand(sql, Con))
+            {
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    return true; // SQL executed successfully
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error executing SQL: " + ex.ToString());
+                    return false; // SQL execution failed
+                }
             }
         }
         public static int RunORAwithResult(string ora)
@@ -131,16 +149,14 @@ namespace Phanhe1
             }
         }
 
-        public static Boolean check_dba(string username)
+        public static object GetDataToText(string ora)
         {
-            string ora = "SELECT COUNT(*) FROM DBA_ROLE_PRIVS WHERE UPPER(GRANTEE) = '" + username + "' AND UPPER(GRANTED_ROLE) = 'DBA';";
+            object value = null;
             using (OracleCommand command = new OracleCommand(ora, Con))
             {
-
-                int userCount = Convert.ToInt32(command.ExecuteScalar());
-
-                return userCount > 0 ? true : false;
+                value = command.ExecuteScalar();
             }
+            return value;
         }
 
 
@@ -418,6 +434,29 @@ namespace Phanhe1
                 cmd = null;
                 return 0;
             }
+        }
+
+        public static string cmd_reader_1row_1col(string cmd_reader)
+        {
+            string result;
+            OracleCommand command = new OracleCommand();
+            command.CommandText = cmd_reader;
+            command.Connection = Con;
+            OracleDataReader reader = command.ExecuteReader();
+            if (reader != null)
+            {
+                while (reader.Read())
+                {
+
+                    if (reader.GetValue(0).ToString() != null)
+                    {
+                        result = reader.GetValue(0).ToString();
+                        return result;
+                    }
+                    else { break; }
+                }
+            }
+            return "";
         }
 
     }
