@@ -10,45 +10,83 @@ using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 using System.Web.UI.WebControls;
 using ChangePasswordForm;
+using System.Diagnostics.Eventing.Reader;
+using System.Runtime.CompilerServices;
 
 namespace Phanhe1
 {
     internal class Connectionfunction
     {
         public static OracleConnection Con;
+        public static bool check_changepwd = false;
 
         private static string host_name = @"DESKTOP-2HQ1IDD";
         //String connectionString = @"DATA SOURCE = localhost:1521/XE; USER ID=sys;PASSWORD=admin;DBA Privilege=SYSDBA;Pooling=false;";
 
         public static void InitConnection(String username, String password)
         {
-            String connectionString = @"Data Source=localhost:1521/XE" + ";User ID=" + username + ";Password=" + password;
+            String connectionString = @"Data Source=localhost:1521/XE" + ";User ID=" + username.ToUpper() + ";Password=" + password;
             Con = new OracleConnection();
             Con.ConnectionString = connectionString;
-
+            int login_Count = 0;
+            
+            Con.Open();
             try
             {
                 //Mở kết nối
-                Con.Open();
+                
+                string ora = "SELECT MAX(login_count) FROM COMPANY.USER_LOGIN_HISTORY WHERE UPPER(USERNAME) = '" + username.ToUpper() +"'";
+                using (OracleCommand command = new OracleCommand(ora, Con))
+                {
+                    login_Count = Convert.ToInt32(command.ExecuteScalar());
+                }
+
             }
             catch (OracleException ex)
             {
-                if (ex.Message.Contains("First time login.Please change your password"))
+                MessageBox.Show(ex.Message);
+                   
+                
+            }
+            finally
+            {
+                if (Con.State == ConnectionState.Open)
                 {
-                    ChangePwd_Form changepwd = new ChangePwd_Form();
-                    changepwd.Show();
+
+
+                    if (login_Count == 1)
+                    {
+                        ChangePwd_Form changepwd = new ChangePwd_Form();
+                        changepwd.ShowDialog();
+
+                        if (ChangePwd_Form.check)
+                        {
+                            MessageBox.Show("Đăng nhập thành công");
+                            
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đăng nhập thành công");
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Đăng nhập thất bại");
+                }
+                
             }
 
             //Kiểm tra kết nối
-            if (Con.State == ConnectionState.Open)
-            {
-                MessageBox.Show("Kết nối DB thành công");
-            }
+            //if (Con.State == ConnectionState.Open)
+            //{
+                
+            //}
 
 
 
         }
+
 
         public static void InitConnection_DBA()
         {
@@ -121,6 +159,7 @@ namespace Phanhe1
         }
         public static int RunORAwithResult(string ora)
         {
+
             using (OracleCommand cmd = new OracleCommand(ora, Con))
             {
                 try
@@ -471,6 +510,7 @@ namespace Phanhe1
             }
             return "";
         }
+
 
     }
 }

@@ -82,10 +82,12 @@ namespace Phanhe1
             String password = txt_password.Text.Trim();
             Connectionfunction.InitConnection_DBA();
             string ora = "SELECT COUNT(*) FROM DBA_ROLE_PRIVS WHERE UPPER(GRANTEE) = '" + txt_username.Text.ToUpper() + "' AND UPPER(GRANTED_ROLE) = 'DBA'";
+            
             Boolean check = Connectionfunction.check_username(ora);
             if (check == true)
             {
                 Connectionfunction.InitConnection(username, password);
+
                 try
                 {
                     if (username.Contains(username))
@@ -102,172 +104,172 @@ namespace Phanhe1
                     MessageBox.Show(ex.Message);
                 }
             }
-            else 
+            else
             {
-                string sql = "SELECT VAITRO FROM COMPANY.NHANVIEN WHERE MANV=:USERNAME";
-                OracleCommand command = new OracleCommand(sql, Connectionfunction.Con);
-                command.Parameters.Add(":USERNAME", OracleDbType.Varchar2).Value = username;
-                OracleDataReader reader = command.ExecuteReader();
+                    string sql = "SELECT VAITRO FROM COMPANY.NHANVIEN WHERE MANV=:USERNAME";
+                    OracleCommand command = new OracleCommand(sql, Connectionfunction.Con);
+                    command.Parameters.Add(":USERNAME", OracleDbType.Varchar2).Value = username;
+                    OracleDataReader reader = command.ExecuteReader();
 
-                bool isNVRole = false, isTCRole = false, isTDARole=false;
-                bool isNSRole = false, isQLRole = false, isTPRole = false;
+                    bool isNVRole = false, isTCRole = false, isTDARole = false;
+                    bool isNSRole = false, isQLRole = false, isTPRole = false;
 
-                while (reader.Read())
-                {
-                    string role = reader["VAITRO"].ToString();
-                    if (role == "NV")
+                    while (reader.Read())
                     {
-                        isNVRole = true;
-                        break;
-                    }
-                    else if (role == "NS")
-                    {
-                        isNSRole = true;
-                        break;
-                    }
-                    else if (role == "QL")
-                    {
-                        isQLRole = true;
-                        break;
-                    }
-                    else if (role == "TP")
-                    {
-                        isTPRole = true;
-                        break;
-                    }
-                    else if (role == "TC")
-                    {
-                        isTCRole = true;
-                        break;
-                    }
-                    else if (role == "TDA")
-                    {
-                        isTDARole = true;
-                        break;
-                    }
-                }
-
-                reader.Close();
-
-                if (isNVRole)
-                {
-                    Connectionfunction.InitConnection(username, password);
-                    try
-                    {
-                        if (username.Contains(username))
+                        string role = reader["VAITRO"].ToString();
+                        if (role == "NV")
                         {
-                            this.Hide();
-                            t = new Thread(open_form_main_nv);
-                            t.SetApartmentState(ApartmentState.STA);
-                            t.Start();
-
+                            isNVRole = true;
+                            break;
+                        }
+                        else if (role == "NS")
+                        {
+                            isNSRole = true;
+                            break;
+                        }
+                        else if (role == "QL")
+                        {
+                            isQLRole = true;
+                            break;
+                        }
+                        else if (role == "TP")
+                        {
+                            isTPRole = true;
+                            break;
+                        }
+                        else if (role == "TC")
+                        {
+                            isTCRole = true;
+                            break;
+                        }
+                        else if (role == "TDA")
+                        {
+                            isTDARole = true;
+                            break;
                         }
                     }
-                    catch (OracleException ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-                else if (isNSRole)
-                {
-                    Connectionfunction.InitConnection(username, password);
-                    try
-                    {
-                        if (username.Contains(username))
-                        {
-                            this.Hide();
-                            t = new Thread(open_form_main_ns);
-                            t.SetApartmentState(ApartmentState.STA);
-                            t.Start();
 
+                    reader.Close();
+
+                    if (isNVRole)
+                    {
+                        Connectionfunction.InitConnection(username, password);
+                        try
+                        {
+                            if (username.Contains(username))
+                            {
+                                this.Hide();
+                                t = new Thread(open_form_main_nv);
+                                t.SetApartmentState(ApartmentState.STA);
+                                t.Start();
+
+                            }
+                        }
+                        catch (OracleException ex)
+                        {
+                            MessageBox.Show(ex.Message);
                         }
                     }
-                    catch (OracleException ex)
+                    else if (isNSRole)
                     {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-                else if (isQLRole)
-                {
-                    Connectionfunction.InitConnection(username, password);
-                    try
-                    {
-                        if (username.Contains(username))
+                        Connectionfunction.InitConnection(username, password);
+                        try
                         {
-                            this.Hide();
-                            t = new Thread(open_form_QL);
-                            t.SetApartmentState(ApartmentState.STA);
-                            t.Start();
+                            if (username.Contains(username))
+                            {
+                                this.Hide();
+                                t = new Thread(open_form_main_ns);
+                                t.SetApartmentState(ApartmentState.STA);
+                                t.Start();
 
+                            }
+                        }
+                        catch (OracleException ex)
+                        {
+                            MessageBox.Show(ex.Message);
                         }
                     }
-                    catch (OracleException ex)
+                    else if (isQLRole)
                     {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-                else if (isTPRole)
-                {
-                    Connectionfunction.InitConnection(username, password);
-                    try
-                    {
-                        if (username.Contains(username))
+                        Connectionfunction.InitConnection(username, password);
+                        try
                         {
-                            this.Hide();
-                            t = new Thread(open_form_TRUONG_PHONG);
-                            t.SetApartmentState(ApartmentState.STA);
-                            t.Start();
+                            if (username.Contains(username))
+                            {
+                                this.Hide();
+                                t = new Thread(open_form_QL);
+                                t.SetApartmentState(ApartmentState.STA);
+                                t.Start();
 
+                            }
+                        }
+                        catch (OracleException ex)
+                        {
+                            MessageBox.Show(ex.Message);
                         }
                     }
-                    catch (OracleException ex)
+                    else if (isTPRole)
                     {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-                else if (isTCRole)
-                {
-                    Connectionfunction.InitConnection(username, password);
-                    try
-                    {
-                        if (username.Contains(username))
+                        Connectionfunction.InitConnection(username, password);
+                        try
                         {
-                            this.Hide();
-                            t = new Thread(open_form_TC);
-                            t.SetApartmentState(ApartmentState.STA);
-                            t.Start();
+                            if (username.Contains(username))
+                            {
+                                this.Hide();
+                                t = new Thread(open_form_TRUONG_PHONG);
+                                t.SetApartmentState(ApartmentState.STA);
+                                t.Start();
 
+                            }
+                        }
+                        catch (OracleException ex)
+                        {
+                            MessageBox.Show(ex.Message);
                         }
                     }
-                    catch (OracleException ex)
+                    else if (isTCRole)
                     {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-                else if (isTDARole)
-                {
-                    Connectionfunction.InitConnection(username, password);
-                    try
-                    {
-                        if (username.Contains(username))
+                        Connectionfunction.InitConnection(username, password);
+                        try
                         {
-                            this.Hide();
-                            t = new Thread(open_form_TDA);
-                            t.SetApartmentState(ApartmentState.STA);
-                            t.Start();
+                            if (username.Contains(username))
+                            {
+                                this.Hide();
+                                t = new Thread(open_form_TC);
+                                t.SetApartmentState(ApartmentState.STA);
+                                t.Start();
 
+                            }
+                        }
+                        catch (OracleException ex)
+                        {
+                            MessageBox.Show(ex.Message);
                         }
                     }
-                    catch (OracleException ex)
+                    else if (isTDARole)
                     {
-                        MessageBox.Show(ex.Message);
+                        Connectionfunction.InitConnection(username, password);
+                        try
+                        {
+                            if (username.Contains(username))
+                            {
+                                this.Hide();
+                                t = new Thread(open_form_TDA);
+                                t.SetApartmentState(ApartmentState.STA);
+                                t.Start();
+
+                            }
+                        }
+                        catch (OracleException ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                     }
-                }
-                else
-                {
-                    // Người dùng không có vai trò "NV"
-                    MessageBox.Show("Người dùng không có vai trò NV");
-                }
+                    else
+                    {
+                        // Người dùng không có vai trò "NV"
+                        MessageBox.Show("Người dùng không có vai trò NV");
+                    }
             }
 
             

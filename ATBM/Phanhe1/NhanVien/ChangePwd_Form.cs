@@ -18,6 +18,7 @@ namespace ChangePasswordForm
     public partial class ChangePwd_Form : Form
     {
         //OracleConnection conn;
+        public static bool check = false;
         public ChangePwd_Form()
         {
             InitializeComponent();
@@ -119,6 +120,8 @@ namespace ChangePasswordForm
 
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Change password successfully");
+                    check = true;
+                    this.Close();
 
                 }
                 catch (OracleException ex)
