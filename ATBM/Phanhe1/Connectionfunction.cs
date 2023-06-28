@@ -7,6 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
+using System.Web.UI.WebControls;
+using ChangePasswordForm;
 
 namespace Phanhe1
 {
@@ -23,9 +26,19 @@ namespace Phanhe1
             Con = new OracleConnection();
             Con.ConnectionString = connectionString;
 
-
-            //Mở kết nối
-            Con.Open();
+            try
+            {
+                //Mở kết nối
+                Con.Open();
+            }
+            catch (OracleException ex)
+            {
+                if (ex.Message.Contains("First time login.Please change your password"))
+                {
+                    ChangePwd_Form changepwd = new ChangePwd_Form();
+                    changepwd.Show();
+                }
+            }
 
             //Kiểm tra kết nối
             if (Con.State == ConnectionState.Open)
@@ -39,7 +52,7 @@ namespace Phanhe1
 
         public static void InitConnection_DBA()
         {
-            String connectionString = @"Data Source=localhost:1521/XE;User ID = sys; Password= 20120305;DBA Privilege=SYSDBA;";
+            String connectionString = @"Data Source=localhost:1521/XE;User ID = sys; Password= admin;DBA Privilege=SYSDBA;";
             Con = new OracleConnection();
             Con.ConnectionString = connectionString;
 

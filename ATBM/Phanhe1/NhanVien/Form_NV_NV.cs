@@ -1,4 +1,5 @@
-﻿using Oracle.ManagedDataAccess.Client;
+﻿using ChangePasswordForm;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -103,6 +104,12 @@ namespace Phanhe1.NhanVien
         {
             Form_Password dangnhap = new Form_Password();
             dangnhap.Show();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            ChangePwd_Form changepwd = new ChangePwd_Form();
+            changepwd.Show();
         }
     }
 }

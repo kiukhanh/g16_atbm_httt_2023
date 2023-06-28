@@ -87,6 +87,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NhanVien\ChangePwd_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\ChangePwd_Form.Designer.cs">
+      <DependentUpon>ChangePwd_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connectionfunction.cs" />
     <Compile Include="NhanVien\Form_Luong_PC.cs">
       <SubType>Form</SubType>
@@ -258,6 +264,9 @@
     <Compile Include="Trưởng đề án\Form_TDA.designer.cs">
       <DependentUpon>Form_TDA.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="NhanVien\ChangePwd_Form.resx">
+      <DependentUpon>ChangePwd_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhanVien\Form_Luong_PC.resx">
       <DependentUpon>Form_Luong_PC.cs</DependentUpon>
     </EmbeddedResource>
