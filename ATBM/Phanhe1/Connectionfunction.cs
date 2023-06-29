@@ -50,6 +50,7 @@ namespace Phanhe1
                     {
                         login_Count = Convert.ToInt32(result);
                     }
+                    
                 }
 
             }
@@ -76,7 +77,7 @@ namespace Phanhe1
                             
                         }
                     }
-                    if (login_Count == 15)
+                    else if (login_Count == 15)
                     {
                         ChangePwd_Form changepwd = new ChangePwd_Form();
                         changepwd.ShowDialog();

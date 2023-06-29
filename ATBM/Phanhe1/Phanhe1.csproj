@@ -87,6 +87,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBA_Func\Check_Priv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBA_Func\Check_Priv.Designer.cs">
+      <DependentUpon>Check_Priv.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBA_Func\Form_grant_privileges.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,6 +276,9 @@
     <Compile Include="Trưởng đề án\Form_TDA.designer.cs">
       <DependentUpon>Form_TDA.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DBA_Func\Check_Priv.resx">
+      <DependentUpon>Check_Priv.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DBA_Func\Form_grant_privileges.resx">
       <DependentUpon>Form_grant_privileges.cs</DependentUpon>
     </EmbeddedResource>

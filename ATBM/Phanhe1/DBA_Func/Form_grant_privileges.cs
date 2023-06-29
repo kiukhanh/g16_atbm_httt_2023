@@ -172,5 +172,11 @@ namespace Phanhe1.DBA_Func
                 check_delete_otp.Enabled = false;
             }
         }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            Check_Priv form = new Check_Priv(box_user_role.Text.Trim().ToUpper());
+            form.Show();
+        }
     }
 }

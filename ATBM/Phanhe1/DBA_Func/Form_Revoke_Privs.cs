@@ -60,8 +60,7 @@ namespace Phanhe1
             string name = textBox1.Text;
             string priv = textBox2.Text;
             string obj = textBox5.Text;
-            string sql = "alter session set  \"_oracle_script\" = true";
-            Connectionfunction.RunORA(sql);
+            
             try
             {
                 string sql6 = "BEGIN\nRevoke_Object_Privs_User('" + name + "','" + priv + "','" + obj + "');" + "\nEND;";
@@ -81,8 +80,7 @@ namespace Phanhe1
             string name = textBox1.Text;
             string priv = textBox2.Text;
             string obj = textBox5.Text;
-            string sql = "alter session set  \"_oracle_script\" = true";
-            Connectionfunction.RunORA(sql);
+            
             try
             {
                 string sql6 = "BEGIN\nRevoke_Object_Privs_User('" + name + "','" + priv +"','"+ obj + "');" + "\nEND;";

@@ -74,8 +74,6 @@ namespace Phanhe1
         {
             string name = textBox_UserName.Text;
             string password = textBox1_Password.Text;
-            string sql = "alter session set  \"_oracle_script\" = true";
-            Connectionfunction.RunORA(sql);
             try
             {
                 string sql1 = "BEGIN\nGrant_NewUser('" + name +"','"+ password + "');"+"\nEND;";
@@ -105,8 +103,7 @@ namespace Phanhe1
             string name = textBox_UserName.Text;
             string password = password = textBox1_Password.Text;
            
-            string sql = "alter session set  \"_oracle_script\" = true";
-            Connectionfunction.RunORA(sql);
+           
             try
             {
                 string sql2 = "BEGIN\nGrant_NewRole('" + name + "','" + password + "');" + "\nEND;";
@@ -125,8 +122,7 @@ namespace Phanhe1
         private void button_DeleteUser_Click_1(object sender, EventArgs e)
         {
             string name = textBox_UserName.Text;
-            string sql = "alter session set  \"_oracle_script\" = true";
-            Connectionfunction.RunORA(sql);
+            
             try
             {
                 string sql3 = "BEGIN\nDrop_User('" + name + "');" + "\nEND;";
@@ -169,8 +165,7 @@ namespace Phanhe1
         {
             string name = textBox_UserName.Text;
             string password = textBox1_Password.Text;
-            string sql = "alter session set  \"_oracle_script\" = true";
-            Connectionfunction.RunORA(sql);
+            
             try
             {
                 string sql5 = "BEGIN\nAlter_User('" + name + "','" + password + "');" + "\nEND;";
@@ -192,8 +187,7 @@ namespace Phanhe1
         {
             string name = textBox_UserName.Text;
             string password = textBox1_Password.Text;
-            string sql = "alter session set  \"_oracle_script\" = true";
-            Connectionfunction.RunORA(sql);
+            
             try
             {
                 string sql6 = "BEGIN\nAlter_Role('" + name + "','" + password + "');" + "\nEND;";
