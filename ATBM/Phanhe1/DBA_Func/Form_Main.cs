@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Phanhe1.DBA_Func;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,7 +31,7 @@ namespace Phanhe1
         public void open_form_grantprivileges(object obj)
         {
 
-            Application.Run(new Form_grant_userrole(username));
+            Application.Run(new Form_grant_privileges());
         }
         public void open_form_grantroletouser(object obj)
         {

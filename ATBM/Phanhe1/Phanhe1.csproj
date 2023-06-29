@@ -87,6 +87,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBA_Func\Form_grant_privileges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBA_Func\Form_grant_privileges.Designer.cs">
+      <DependentUpon>Form_grant_privileges.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanVien\ChangePwd_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +270,9 @@
     <Compile Include="Trưởng đề án\Form_TDA.designer.cs">
       <DependentUpon>Form_TDA.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DBA_Func\Form_grant_privileges.resx">
+      <DependentUpon>Form_grant_privileges.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhanVien\ChangePwd_Form.resx">
       <DependentUpon>ChangePwd_Form.cs</DependentUpon>
     </EmbeddedResource>

@@ -36,7 +36,7 @@ namespace Phanhe1
        
         private void Form_Main_NS_Load(object sender, EventArgs e)
         {
-           /* btn_nhanvien_ns.PerformClick();*/
+            btn_nhanvien_ns.PerformClick();
             string query = "SELECT SYS_CONTEXT('USERENV','SESSION_USER') FROM DUAL";
             object value = Connectionfunction.GetDataToText(query);
             txt_ID.Text = "ID: " + value.ToString();

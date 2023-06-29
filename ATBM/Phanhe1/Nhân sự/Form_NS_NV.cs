@@ -81,9 +81,6 @@ namespace Phanhe1.Nhân_sự
                 MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            string sql = "alter session set  \"_oracle_script\" = true";
-            Connectionfunction.RunORA(sql);
-
             try
             {
                 string ngaysinh = dt_ns_nv.Value.ToString("dd-MM-yyyy");
@@ -157,9 +154,6 @@ namespace Phanhe1.Nhân_sự
                 MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            string sql = "alter session set  \"_oracle_script\" = true";
-            Connectionfunction.RunORA(sql);
-
             try
             {
                 string ngaysinh = dt_ns_nv.Value.ToString("dd-MM-yyyy");
@@ -198,6 +192,11 @@ namespace Phanhe1.Nhân_sự
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            LoadData_nv();
         }
     }
 }

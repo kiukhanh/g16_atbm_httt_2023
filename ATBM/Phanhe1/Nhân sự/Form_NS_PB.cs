@@ -53,11 +53,6 @@ namespace Phanhe1.Nhân_sự
             txt_maphongban.Text = mapb;
             
 
-            //dtb_trgph = Connectionfunction.GetDataToTable(sql2);
-            //cho cap nhat
-          /*  comboboc_trg_capnhat.DisplayMember = "MANV";
-            comboboc_trg_capnhat.ValueMember = "MANV";
-            comboboc_trg_capnhat.DataSource = dtb_trgph;*/
 
         }
 
@@ -71,12 +66,6 @@ namespace Phanhe1.Nhân_sự
                 MessageBox.Show("Vui lòng nhập đầy đủ dữ liệu!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-
-            string sql = "alter session set  \"_oracle_script\" = true";
-            Connectionfunction.RunORA(sql);
-           /* DataRowView selectedRow = (DataRowView)combobox_trgphg.SelectedItem;
-            string selectedValue = selectedRow["MANV"].ToString();
-*/
           
             try
             {
@@ -103,10 +92,7 @@ namespace Phanhe1.Nhân_sự
                 return;
             }
 
-            string sql = "alter session set  \"_oracle_script\" = true";
-            Connectionfunction.RunORA(sql);
-            /*DataRowView selectedRow = (DataRowView)comboboc_trg_capnhat.SelectedItem;
-            string selectedValue = selectedRow["MANV"].ToString();*/
+
 
             try
             {
@@ -145,6 +131,11 @@ namespace Phanhe1.Nhân_sự
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            LoadData_pb();
         }
     }
 

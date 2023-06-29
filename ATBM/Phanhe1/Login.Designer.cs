@@ -69,7 +69,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(177)))), ((int)(((byte)(10)))));
             this.label3.Location = new System.Drawing.Point(377, 65);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 60);
+            this.label3.Size = new System.Drawing.Size(158, 59);
             this.label3.TabIndex = 2;
             this.label3.Text = "LOGIN";
             // 
@@ -128,7 +128,7 @@
             this.buton_login.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(177)))), ((int)(((byte)(10)))));
             this.buton_login.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buton_login.ForeColor = System.Drawing.Color.White;
-            this.buton_login.Location = new System.Drawing.Point(387, 328);
+            this.buton_login.Location = new System.Drawing.Point(375, 292);
             this.buton_login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buton_login.Name = "buton_login";
             this.buton_login.Size = new System.Drawing.Size(180, 46);
@@ -141,7 +141,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(939, 604);
+            this.ClientSize = new System.Drawing.Size(881, 483);
             this.Controls.Add(this.buton_login);
             this.Controls.Add(this.txt_password);
             this.Controls.Add(this.txt_username);

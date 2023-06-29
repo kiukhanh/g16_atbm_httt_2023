@@ -25,12 +25,18 @@ namespace Phanhe1
 
         public static void InitConnection(String username, String password)
         {
-            String connectionString = @"Data Source=localhost:1521/XE" + ";User ID=" + username.ToUpper() + ";Password=" + password;
+            String connectionString = @"Data Source=localhost:1521/XEPDB1" + ";User ID=" + username.ToUpper() + ";Password=" + password;
             Con = new OracleConnection();
             Con.ConnectionString = connectionString;
             int login_Count = 0;
             
-            Con.Open();
+            try
+            {
+                Con.Open();
+            }
+            catch {
+                MessageBox.Show("Sai thông tin hoặc mật khẩu!!","Thông Báo");
+            }
             try
             {
                 //Mở kết nối
@@ -38,7 +44,12 @@ namespace Phanhe1
                 string ora = "SELECT MAX(login_count) FROM COMPANY.USER_LOGIN_HISTORY WHERE UPPER(USERNAME) = '" + username.ToUpper() +"'";
                 using (OracleCommand command = new OracleCommand(ora, Con))
                 {
-                    login_Count = Convert.ToInt32(command.ExecuteScalar());
+
+                    object result = command.ExecuteScalar();
+                    if (result != DBNull.Value)
+                    {
+                        login_Count = Convert.ToInt32(result);
+                    }
                 }
 
             }
@@ -65,6 +76,17 @@ namespace Phanhe1
                             
                         }
                     }
+                    if (login_Count == 15)
+                    {
+                        ChangePwd_Form changepwd = new ChangePwd_Form();
+                        changepwd.ShowDialog();
+
+                        if (ChangePwd_Form.check)
+                        {
+                            MessageBox.Show("Đăng nhập thành công");
+
+                        }
+                    }
                     else
                     {
                         MessageBox.Show("Đăng nhập thành công");
@@ -77,20 +99,28 @@ namespace Phanhe1
                 
             }
 
-            //Kiểm tra kết nối
-            //if (Con.State == ConnectionState.Open)
-            //{
-                
-            //}
+        }
+        public static void InitConnection_dba_connect(String username, String password)
+        {
+            String connectionString = @"Data Source=localhost:1521/XEPDB1" + ";User ID=" + username.ToUpper() + ";Password=" + password;
+            Con = new OracleConnection();
+            Con.ConnectionString = connectionString;
 
-
+            try
+            {
+                Con.Open();
+            }
+            catch
+            {
+                MessageBox.Show("Đăng nhập thất bại");
+            }
+            
 
         }
 
-
         public static void InitConnection_DBA()
         {
-            String connectionString = @"Data Source=localhost:1521/XE;User ID = sys; Password= admin;DBA Privilege=SYSDBA;";
+            String connectionString = @"Data Source=localhost:1521/XEPDB1;User ID = sys; Password= 20120305;DBA Privilege=SYSDBA;";
             Con = new OracleConnection();
             Con.ConnectionString = connectionString;
 
@@ -217,6 +247,19 @@ namespace Phanhe1
 
             OracleCommand command = new OracleCommand();
             command.CommandText = $"SELECT TABLE_NAME FROM ALL_TABLES WHERE UPPER(OWNER) LIKE SYS_CONTEXT('USERENV','SESSION_USER')";
+            command.Connection = Con;
+
+            OracleDataAdapter adapter = new OracleDataAdapter(command);
+            DataTable dataTable = new DataTable(); //create a new table
+            adapter.Fill(dataTable);
+            return dataTable;
+
+        }
+        public static DataTable GetAll_colName(string table)
+        {
+
+            OracleCommand command = new OracleCommand();
+            command.CommandText = $"SELECT COLUMN_NAME FROM ALL_TAB_COLUMNS WHERE TABLE_NAME = '{table}'";
             command.Connection = Con;
 
             OracleDataAdapter adapter = new OracleDataAdapter(command);

@@ -74,6 +74,7 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.dgv_ds_nv = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label2 = new System.Windows.Forms.Label();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel7.SuspendLayout();
@@ -531,9 +532,9 @@
             this.btn_nv_form.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
             this.btn_nv_form.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_nv_form.ForeColor = System.Drawing.Color.White;
-            this.btn_nv_form.Location = new System.Drawing.Point(21, 148);
+            this.btn_nv_form.Location = new System.Drawing.Point(21, 165);
             this.btn_nv_form.Name = "btn_nv_form";
-            this.btn_nv_form.Size = new System.Drawing.Size(112, 71);
+            this.btn_nv_form.Size = new System.Drawing.Size(112, 66);
             this.btn_nv_form.TabIndex = 6;
             this.btn_nv_form.Text = "Xem thông tin của bản thân";
             this.btn_nv_form.Click += new System.EventHandler(this.btn_nv_form_Click);
@@ -547,7 +548,7 @@
             this.btn_capnhat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
             this.btn_capnhat.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_capnhat.ForeColor = System.Drawing.Color.White;
-            this.btn_capnhat.Location = new System.Drawing.Point(21, 90);
+            this.btn_capnhat.Location = new System.Drawing.Point(21, 85);
             this.btn_capnhat.Name = "btn_capnhat";
             this.btn_capnhat.Size = new System.Drawing.Size(112, 34);
             this.btn_capnhat.TabIndex = 5;
@@ -568,6 +569,7 @@
             // 
             this.guna2Panel4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
             this.guna2Panel4.BorderThickness = 2;
+            this.guna2Panel4.Controls.Add(this.guna2Button1);
             this.guna2Panel4.Controls.Add(this.btn_them);
             this.guna2Panel4.Controls.Add(this.btn_nv_form);
             this.guna2Panel4.Controls.Add(this.btn_capnhat);
@@ -586,7 +588,7 @@
             this.btn_them.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
             this.btn_them.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_them.ForeColor = System.Drawing.Color.White;
-            this.btn_them.Location = new System.Drawing.Point(21, 37);
+            this.btn_them.Location = new System.Drawing.Point(21, 45);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(112, 34);
             this.btn_them.TabIndex = 7;
@@ -681,6 +683,22 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Cập nhật";
             // 
+            // guna2Button1
+            // 
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(21, 125);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(112, 34);
+            this.guna2Button1.TabIndex = 8;
+            this.guna2Button1.Text = "Load Bảng";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
             // Form_NS_NV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -765,5 +783,6 @@
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2TextBox txt_vaitro;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

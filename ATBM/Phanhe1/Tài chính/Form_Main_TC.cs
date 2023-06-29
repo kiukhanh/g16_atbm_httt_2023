@@ -80,7 +80,13 @@ namespace WindowsFormsApp1
                 adapter.Fill(dataTable);
                 dataGridView1.Visible = true;
                 dataGridView1.DataSource = dataTable;
-                
+                string deleteQuery = "DELETE FROM COMPANY.NHANVIEN_TC";
+                using (OracleCommand command = new OracleCommand(deleteQuery, Connectionfunction.Con))
+                {
+                    // Execute the delete query
+                    command.ExecuteNonQuery();
+                }
+
             }
         }
 

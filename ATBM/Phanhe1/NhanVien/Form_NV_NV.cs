@@ -53,9 +53,6 @@ namespace Phanhe1.NhanVien
                 return;
             }    
 
-            string sql = "alter session set  \"_oracle_script\" = true";
-            Connectionfunction.RunORA(sql);
-
             try
             {
                 string ngaysinh = dt_ngaysinh.Value.ToString("dd-MM-yyyy"); // Format the date value

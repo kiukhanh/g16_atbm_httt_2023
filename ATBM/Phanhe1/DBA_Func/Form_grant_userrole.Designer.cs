@@ -42,6 +42,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.dvg_grantprivileges = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.txt_cot = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -53,10 +55,10 @@
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
             this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Location = new System.Drawing.Point(-8, -1);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel1.Location = new System.Drawing.Point(-11, -1);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(894, 107);
+            this.guna2Panel1.Size = new System.Drawing.Size(1192, 132);
             this.guna2Panel1.TabIndex = 0;
             // 
             // label1
@@ -64,25 +66,26 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(250, 35);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(333, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(326, 30);
+            this.label1.Size = new System.Drawing.Size(414, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "CẤP QUYỀN ROLE HOẶC USER";
             // 
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(214)))), ((int)(((byte)(184)))));
+            this.guna2Panel2.Controls.Add(this.guna2HtmlLabel1);
+            this.guna2Panel2.Controls.Add(this.txt_cot);
             this.guna2Panel2.Controls.Add(this.box_user_role);
             this.guna2Panel2.Controls.Add(this.button_check);
             this.guna2Panel2.Controls.Add(this.button_grant);
             this.guna2Panel2.Controls.Add(this.guna2PictureBox1);
             this.guna2Panel2.Controls.Add(this.label2);
-            this.guna2Panel2.Location = new System.Drawing.Point(-8, 102);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel2.Location = new System.Drawing.Point(-11, 126);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(894, 107);
+            this.guna2Panel2.Size = new System.Drawing.Size(1192, 137);
             this.guna2Panel2.TabIndex = 1;
             // 
             // box_user_role
@@ -95,16 +98,16 @@
             this.box_user_role.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.box_user_role.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.box_user_role.ItemHeight = 30;
-            this.box_user_role.Location = new System.Drawing.Point(263, 18);
-            this.box_user_role.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.box_user_role.Location = new System.Drawing.Point(369, 22);
+            this.box_user_role.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.box_user_role.Name = "box_user_role";
-            this.box_user_role.Size = new System.Drawing.Size(140, 36);
+            this.box_user_role.Size = new System.Drawing.Size(185, 36);
             this.box_user_role.TabIndex = 5;
             // 
             // button_check
             // 
             this.button_check.AutoRoundedCorners = true;
-            this.button_check.BorderRadius = 17;
+            this.button_check.BorderRadius = 22;
             this.button_check.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.button_check.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.button_check.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -112,10 +115,10 @@
             this.button_check.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
             this.button_check.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_check.ForeColor = System.Drawing.Color.White;
-            this.button_check.Location = new System.Drawing.Point(748, 52);
-            this.button_check.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_check.Location = new System.Drawing.Point(997, 64);
+            this.button_check.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_check.Name = "button_check";
-            this.button_check.Size = new System.Drawing.Size(116, 37);
+            this.button_check.Size = new System.Drawing.Size(155, 46);
             this.button_check.TabIndex = 4;
             this.button_check.Text = "CHECK";
             this.button_check.Click += new System.EventHandler(this.button_check_Click);
@@ -123,7 +126,7 @@
             // button_grant
             // 
             this.button_grant.AutoRoundedCorners = true;
-            this.button_grant.BorderRadius = 17;
+            this.button_grant.BorderRadius = 22;
             this.button_grant.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.button_grant.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.button_grant.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -131,10 +134,10 @@
             this.button_grant.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
             this.button_grant.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_grant.ForeColor = System.Drawing.Color.White;
-            this.button_grant.Location = new System.Drawing.Point(748, 11);
-            this.button_grant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_grant.Location = new System.Drawing.Point(997, 14);
+            this.button_grant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_grant.Name = "button_grant";
-            this.button_grant.Size = new System.Drawing.Size(116, 37);
+            this.button_grant.Size = new System.Drawing.Size(155, 46);
             this.button_grant.TabIndex = 3;
             this.button_grant.Text = "GRANT";
             this.button_grant.Click += new System.EventHandler(this.button_grant_Click);
@@ -143,10 +146,10 @@
             // 
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(19, 10);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(25, 12);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(67, 41);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(89, 50);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 1;
             this.guna2PictureBox1.TabStop = false;
@@ -156,10 +159,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(90, 18);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(120, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(179, 25);
+            this.label2.Size = new System.Drawing.Size(216, 31);
             this.label2.TabIndex = 0;
             this.label2.Text = "CHỌN ROLE/USER:";
             // 
@@ -167,10 +169,10 @@
             // 
             this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
             this.guna2Panel3.Controls.Add(this.dvg_grantprivileges);
-            this.guna2Panel3.Location = new System.Drawing.Point(-8, 207);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel3.Location = new System.Drawing.Point(-11, 255);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(896, 282);
+            this.guna2Panel3.Size = new System.Drawing.Size(1195, 347);
             this.guna2Panel3.TabIndex = 1;
             // 
             // dvg_grantprivileges
@@ -200,14 +202,14 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dvg_grantprivileges.DefaultCellStyle = dataGridViewCellStyle3;
             this.dvg_grantprivileges.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dvg_grantprivileges.Location = new System.Drawing.Point(19, 6);
-            this.dvg_grantprivileges.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dvg_grantprivileges.Location = new System.Drawing.Point(3, 2);
+            this.dvg_grantprivileges.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dvg_grantprivileges.Name = "dvg_grantprivileges";
             this.dvg_grantprivileges.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dvg_grantprivileges.RowHeadersVisible = false;
             this.dvg_grantprivileges.RowHeadersWidth = 51;
             this.dvg_grantprivileges.RowTemplate.Height = 24;
-            this.dvg_grantprivileges.Size = new System.Drawing.Size(866, 267);
+            this.dvg_grantprivileges.Size = new System.Drawing.Size(1192, 345);
             this.dvg_grantprivileges.TabIndex = 0;
             this.dvg_grantprivileges.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dvg_grantprivileges.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -232,15 +234,45 @@
             this.dvg_grantprivileges.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dvg_grantprivileges.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvg_grantprivileges_CellContentClick);
             // 
+            // txt_cot
+            // 
+            this.txt_cot.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_cot.DefaultText = "";
+            this.txt_cot.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_cot.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_cot.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_cot.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_cot.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_cot.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_cot.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_cot.Location = new System.Drawing.Point(369, 75);
+            this.txt_cot.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_cot.Name = "txt_cot";
+            this.txt_cot.PasswordChar = '\0';
+            this.txt_cot.PlaceholderText = "";
+            this.txt_cot.SelectedText = "";
+            this.txt_cot.Size = new System.Drawing.Size(185, 48);
+            this.txt_cot.TabIndex = 6;
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(58, 85);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(264, 25);
+            this.guna2HtmlLabel1.TabIndex = 7;
+            this.guna2HtmlLabel1.Text = "Nhập vào cột bạn muốn tinh chế";
+            // 
             // Form_grant_userrole
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(886, 491);
+            this.ClientSize = new System.Drawing.Size(1181, 604);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form_grant_userrole";
             this.Text = "Form_grant_userrole";
             this.Load += new System.EventHandler(this.Form_grant_userrole_Load);
@@ -267,5 +299,7 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2DataGridView dvg_grantprivileges;
         private Guna.UI2.WinForms.Guna2ComboBox box_user_role;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2TextBox txt_cot;
     }
 }

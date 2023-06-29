@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,7 +41,23 @@ namespace Phanhe1
 
             if (!role.Equals(user_OR_role))
             {
-                Connectionfunction.grantRoleToUser_OR_Role(role, user_OR_role);
+                role = role.ToUpper();
+                user_OR_role = user_OR_role.ToUpper();
+                OracleCommand command = new OracleCommand();
+                command.Connection = Connectionfunction.Con;
+                if (check_grant_option.Checked == false)
+                {
+                    
+                    command.CommandText = $"GRANT {role} TO {user_OR_role}";
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Cap quyen thanh cong", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    command.CommandText = $"GRANT {role} TO {user_OR_role} WITH ADMIN OPTION";
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Cap quyen thanh cong", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }    
             }
         }
         
@@ -54,6 +71,11 @@ namespace Phanhe1
                 return;
             }
             Run_SP_GrantRoleToUser_OR_Role();
+        }
+
+        private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
