@@ -37,11 +37,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.box_USER = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.box_ROLE = new Guna.UI2.WinForms.Guna2ComboBox();
             this.button_check = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.box_ROLE = new System.Windows.Forms.ComboBox();
+            this.box_USER = new System.Windows.Forms.ComboBox();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
@@ -72,14 +72,14 @@
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(214)))), ((int)(((byte)(184)))));
+            this.guna2Panel2.Controls.Add(this.box_USER);
+            this.guna2Panel2.Controls.Add(this.box_ROLE);
             this.guna2Panel2.Controls.Add(this.check_grant_option);
             this.guna2Panel2.Controls.Add(this.label5);
             this.guna2Panel2.Controls.Add(this.label4);
             this.guna2Panel2.Controls.Add(this.guna2PictureBox2);
             this.guna2Panel2.Controls.Add(this.guna2PictureBox1);
-            this.guna2Panel2.Controls.Add(this.box_USER);
             this.guna2Panel2.Controls.Add(this.label3);
-            this.guna2Panel2.Controls.Add(this.box_ROLE);
             this.guna2Panel2.Controls.Add(this.button_check);
             this.guna2Panel2.Controls.Add(this.label2);
             this.guna2Panel2.Location = new System.Drawing.Point(-11, 108);
@@ -134,7 +134,7 @@
             // 
             this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(660, 37);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(676, 37);
             this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.Size = new System.Drawing.Size(193, 160);
@@ -154,22 +154,6 @@
             this.guna2PictureBox1.TabIndex = 8;
             this.guna2PictureBox1.TabStop = false;
             // 
-            // box_USER
-            // 
-            this.box_USER.BackColor = System.Drawing.Color.Transparent;
-            this.box_USER.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.box_USER.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.box_USER.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.box_USER.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.box_USER.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.box_USER.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.box_USER.ItemHeight = 30;
-            this.box_USER.Location = new System.Drawing.Point(660, 224);
-            this.box_USER.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.box_USER.Name = "box_USER";
-            this.box_USER.Size = new System.Drawing.Size(245, 36);
-            this.box_USER.TabIndex = 7;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -180,22 +164,6 @@
             this.label3.Size = new System.Drawing.Size(58, 41);
             this.label3.TabIndex = 6;
             this.label3.Text = "TO";
-            // 
-            // box_ROLE
-            // 
-            this.box_ROLE.BackColor = System.Drawing.Color.Transparent;
-            this.box_ROLE.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.box_ROLE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.box_ROLE.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.box_ROLE.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.box_ROLE.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.box_ROLE.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.box_ROLE.ItemHeight = 30;
-            this.box_ROLE.Location = new System.Drawing.Point(269, 220);
-            this.box_ROLE.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.box_ROLE.Name = "box_ROLE";
-            this.box_ROLE.Size = new System.Drawing.Size(245, 36);
-            this.box_ROLE.TabIndex = 5;
             // 
             // button_check
             // 
@@ -228,6 +196,22 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "GRANT";
             // 
+            // box_ROLE
+            // 
+            this.box_ROLE.FormattingEnabled = true;
+            this.box_ROLE.Location = new System.Drawing.Point(269, 224);
+            this.box_ROLE.Name = "box_ROLE";
+            this.box_ROLE.Size = new System.Drawing.Size(193, 24);
+            this.box_ROLE.TabIndex = 13;
+            // 
+            // box_USER
+            // 
+            this.box_USER.FormattingEnabled = true;
+            this.box_USER.Location = new System.Drawing.Point(676, 232);
+            this.box_USER.Name = "box_USER";
+            this.box_USER.Size = new System.Drawing.Size(193, 24);
+            this.box_USER.TabIndex = 14;
+            // 
             // Form_grant_role_ro_user
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -253,15 +237,15 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2ComboBox box_ROLE;
         private Guna.UI2.WinForms.Guna2Button button_check;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2ComboBox box_USER;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2CheckBox check_grant_option;
+        private System.Windows.Forms.ComboBox box_USER;
+        private System.Windows.Forms.ComboBox box_ROLE;
     }
 }

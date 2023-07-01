@@ -132,11 +132,6 @@ namespace Phanhe1
 
         }
 
-        private void guna2PictureBox2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void view_kiem_tra_Click(object sender, EventArgs e)
         {
             t = new Thread(open_form_view_role_privs);
