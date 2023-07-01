@@ -64,14 +64,14 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtg_view_user.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtg_view_user.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dtg_view_user.Location = new System.Drawing.Point(232, 16);
-            this.dtg_view_user.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtg_view_user.Location = new System.Drawing.Point(309, 20);
+            this.dtg_view_user.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtg_view_user.Name = "dtg_view_user";
             this.dtg_view_user.ReadOnly = true;
             this.dtg_view_user.RowHeadersVisible = false;
             this.dtg_view_user.RowHeadersWidth = 51;
             this.dtg_view_user.RowTemplate.Height = 24;
-            this.dtg_view_user.Size = new System.Drawing.Size(645, 465);
+            this.dtg_view_user.Size = new System.Drawing.Size(860, 572);
             this.dtg_view_user.TabIndex = 1;
             this.dtg_view_user.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtg_view_user.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -101,12 +101,11 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(177)))), ((int)(((byte)(10)))));
-            this.label1.Location = new System.Drawing.Point(9, 136);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(59, 173);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 25);
+            this.label1.Size = new System.Drawing.Size(130, 31);
             this.label1.TabIndex = 2;
-            this.label1.Text = "XEM NGƯỜI DÙNG";
+            this.label1.Text = "ALL USERS";
             // 
             // guna2Panel1
             // 
@@ -115,32 +114,32 @@
             this.guna2Panel1.BorderThickness = 2;
             this.guna2Panel1.Controls.Add(this.pictureBox1);
             this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Location = new System.Drawing.Point(22, 16);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel1.Location = new System.Drawing.Point(29, 20);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(191, 184);
+            this.guna2Panel1.Size = new System.Drawing.Size(255, 226);
             this.guna2Panel1.TabIndex = 3;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(45, 27);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(60, 33);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(97, 93);
+            this.pictureBox1.Size = new System.Drawing.Size(129, 114);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
             // Form_View_User
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(886, 491);
+            this.ClientSize = new System.Drawing.Size(1181, 604);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.dtg_view_user);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form_View_User";
             this.Text = "Xem user";
             this.Load += new System.EventHandler(this.Form_View_User_Load);

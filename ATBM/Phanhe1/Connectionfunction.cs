@@ -285,7 +285,7 @@ namespace Phanhe1
         public static DataTable GetRoles(string usn)
         {
             OracleCommand command = new OracleCommand();
-            command.CommandText = $"SELECT DISTINCT(role) FROM ROLE_TAB_PRIVS WHERE OWNER = '{usn}'";
+            command.CommandText = $"SELECT granted_role FROM dba_role_privs WHERE grantee = '{usn.ToUpper()}'";
             command.Connection = Con;
 
             OracleDataAdapter adapter = new OracleDataAdapter(command);
@@ -415,11 +415,12 @@ namespace Phanhe1
         }
 
         //Ham ktra xem quyen nay co thuoc ve role dang xet hay khong
-        public static string CheckIfPrivilegeBelongToRole(String role_name, String roleTable_name, String priv)
+        public static string CheckIfPrivilegeBelongToRole(String role_name, String roleTable_name, String priv, String grant_opt)
         {
             role_name = role_name.ToUpper();
             roleTable_name = roleTable_name.ToUpper();
             priv = priv.ToUpper();
+            grant_opt = grant_opt.ToUpper();
             string result = "";
 
 

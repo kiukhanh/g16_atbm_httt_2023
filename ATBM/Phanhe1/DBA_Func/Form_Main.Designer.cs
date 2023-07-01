@@ -40,9 +40,6 @@
             this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
             this.view_kiem_tra = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox7 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
-            this.view_thu_hoi = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             this.view_phan_role = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -67,8 +64,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).BeginInit();
             this.guna2Panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).BeginInit();
-            this.guna2Panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).BeginInit();
             this.guna2Panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             this.guna2Panel6.SuspendLayout();
@@ -89,7 +84,7 @@
             this.PANEL_MAIN.Location = new System.Drawing.Point(-17, -5);
             this.PANEL_MAIN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PANEL_MAIN.Name = "PANEL_MAIN";
-            this.PANEL_MAIN.Size = new System.Drawing.Size(1221, 711);
+            this.PANEL_MAIN.Size = new System.Drawing.Size(1221, 715);
             this.PANEL_MAIN.TabIndex = 1;
             // 
             // guna2Panel2
@@ -97,7 +92,6 @@
             this.guna2Panel2.Controls.Add(this.guna2Panel10);
             this.guna2Panel2.Controls.Add(this.guna2Panel1);
             this.guna2Panel2.Controls.Add(this.guna2Panel9);
-            this.guna2Panel2.Controls.Add(this.guna2Panel8);
             this.guna2Panel2.Controls.Add(this.guna2Panel7);
             this.guna2Panel2.Controls.Add(this.guna2Panel6);
             this.guna2Panel2.Controls.Add(this.guna2Panel5);
@@ -106,7 +100,7 @@
             this.guna2Panel2.Location = new System.Drawing.Point(60, 92);
             this.guna2Panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1085, 608);
+            this.guna2Panel2.Size = new System.Drawing.Size(1085, 483);
             this.guna2Panel2.TabIndex = 1;
             this.guna2Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
             // 
@@ -116,7 +110,7 @@
             this.guna2Panel10.BorderThickness = 2;
             this.guna2Panel10.Controls.Add(this.guna2Button1);
             this.guna2Panel10.Controls.Add(this.guna2PictureBox9);
-            this.guna2Panel10.Location = new System.Drawing.Point(433, 441);
+            this.guna2Panel10.Location = new System.Drawing.Point(51, 254);
             this.guna2Panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel10.Name = "guna2Panel10";
             this.guna2Panel10.Size = new System.Drawing.Size(216, 165);
@@ -136,7 +130,7 @@
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(201, 60);
             this.guna2Button1.TabIndex = 9;
-            this.guna2Button1.Text = "XEM BẢNG VÀ VIEW";
+            this.guna2Button1.Text = "SEE TABLE/VIEW";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // guna2PictureBox9
@@ -218,7 +212,7 @@
             this.view_kiem_tra.Name = "view_kiem_tra";
             this.view_kiem_tra.Size = new System.Drawing.Size(201, 60);
             this.view_kiem_tra.TabIndex = 9;
-            this.view_kiem_tra.Text = "KIỂM TRA QUYỀN ROLE";
+            this.view_kiem_tra.Text = "CHECK PRIVILEGES ROLE";
             this.view_kiem_tra.Click += new System.EventHandler(this.view_kiem_tra_Click);
             // 
             // guna2PictureBox7
@@ -232,47 +226,6 @@
             this.guna2PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox7.TabIndex = 1;
             this.guna2PictureBox7.TabStop = false;
-            // 
-            // guna2Panel8
-            // 
-            this.guna2Panel8.BorderColor = System.Drawing.Color.Yellow;
-            this.guna2Panel8.BorderThickness = 2;
-            this.guna2Panel8.Controls.Add(this.view_thu_hoi);
-            this.guna2Panel8.Controls.Add(this.guna2PictureBox6);
-            this.guna2Panel8.Location = new System.Drawing.Point(51, 257);
-            this.guna2Panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Panel8.Name = "guna2Panel8";
-            this.guna2Panel8.Size = new System.Drawing.Size(216, 165);
-            this.guna2Panel8.TabIndex = 3;
-            // 
-            // view_thu_hoi
-            // 
-            this.view_thu_hoi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.view_thu_hoi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.view_thu_hoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.view_thu_hoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.view_thu_hoi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
-            this.view_thu_hoi.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.view_thu_hoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(221)))));
-            this.view_thu_hoi.Location = new System.Drawing.Point(13, 117);
-            this.view_thu_hoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.view_thu_hoi.Name = "view_thu_hoi";
-            this.view_thu_hoi.Size = new System.Drawing.Size(180, 46);
-            this.view_thu_hoi.TabIndex = 8;
-            this.view_thu_hoi.Text = "THU HỒI";
-            this.view_thu_hoi.Click += new System.EventHandler(this.view_thu_hoi_Click);
-            // 
-            // guna2PictureBox6
-            // 
-            this.guna2PictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox6.Image")));
-            this.guna2PictureBox6.ImageRotate = 0F;
-            this.guna2PictureBox6.Location = new System.Drawing.Point(40, 23);
-            this.guna2PictureBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2PictureBox6.Name = "guna2PictureBox6";
-            this.guna2PictureBox6.Size = new System.Drawing.Size(125, 82);
-            this.guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox6.TabIndex = 1;
-            this.guna2PictureBox6.TabStop = false;
             // 
             // guna2Panel7
             // 
@@ -300,7 +253,7 @@
             this.view_phan_role.Name = "view_phan_role";
             this.view_phan_role.Size = new System.Drawing.Size(163, 54);
             this.view_phan_role.TabIndex = 7;
-            this.view_phan_role.Text = "PHÂN ROLE CHO USER";
+            this.view_phan_role.Text = "GRANT ROLE TO USER";
             this.view_phan_role.Click += new System.EventHandler(this.view_phan_role_Click);
             // 
             // guna2PictureBox5
@@ -336,12 +289,12 @@
             this.view_phan_quyen.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
             this.view_phan_quyen.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.view_phan_quyen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(221)))));
-            this.view_phan_quyen.Location = new System.Drawing.Point(16, 111);
+            this.view_phan_quyen.Location = new System.Drawing.Point(16, 105);
             this.view_phan_quyen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.view_phan_quyen.Name = "view_phan_quyen";
-            this.view_phan_quyen.Size = new System.Drawing.Size(180, 46);
+            this.view_phan_quyen.Size = new System.Drawing.Size(180, 52);
             this.view_phan_quyen.TabIndex = 8;
-            this.view_phan_quyen.Text = "PHÂN QUYỀN";
+            this.view_phan_quyen.Text = "GRANT/REVOKE ROLE/USER";
             this.view_phan_quyen.Click += new System.EventHandler(this.view_phan_quyen_Click);
             // 
             // guna2PictureBox4
@@ -382,7 +335,7 @@
             this.view_thao_tac.Name = "view_thao_tac";
             this.view_thao_tac.Size = new System.Drawing.Size(195, 54);
             this.view_thao_tac.TabIndex = 8;
-            this.view_thao_tac.Text = "THAO TÁC USER/ROLE";
+            this.view_thao_tac.Text = "FUNCTION IN ROLE/USER";
             this.view_thao_tac.Click += new System.EventHandler(this.view_thao_tac_Click_1);
             // 
             // guna2PictureBox3
@@ -423,7 +376,7 @@
             this.button_view_information.Name = "button_view_information";
             this.button_view_information.Size = new System.Drawing.Size(203, 54);
             this.button_view_information.TabIndex = 7;
-            this.button_view_information.Text = "KIỂM TRA QUYỀN USER";
+            this.button_view_information.Text = "CHECK PRIVILEGES USER";
             this.button_view_information.Click += new System.EventHandler(this.button_view_information_Click);
             // 
             // guna2PictureBox2
@@ -466,7 +419,7 @@
             this.button_view_user.PressedColor = System.Drawing.Color.BlanchedAlmond;
             this.button_view_user.Size = new System.Drawing.Size(180, 46);
             this.button_view_user.TabIndex = 6;
-            this.button_view_user.Text = "XEM USER";
+            this.button_view_user.Text = "SEE USER";
             this.button_view_user.Click += new System.EventHandler(this.button_view_user_Click);
             // 
             // guna2PictureBox1
@@ -496,7 +449,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1181, 706);
+            this.ClientSize = new System.Drawing.Size(1181, 611);
             this.Controls.Add(this.PANEL_MAIN);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form_Main";
@@ -511,8 +464,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).EndInit();
             this.guna2Panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).EndInit();
-            this.guna2Panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).EndInit();
             this.guna2Panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
             this.guna2Panel6.ResumeLayout(false);
@@ -538,8 +489,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox6;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
@@ -547,7 +496,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox7;
         private Guna.UI2.WinForms.Guna2Button view_kiem_tra;
-        private Guna.UI2.WinForms.Guna2Button view_thu_hoi;
         private Guna.UI2.WinForms.Guna2Button view_phan_role;
         private Guna.UI2.WinForms.Guna2Button view_phan_quyen;
         private Guna.UI2.WinForms.Guna2Button view_thao_tac;

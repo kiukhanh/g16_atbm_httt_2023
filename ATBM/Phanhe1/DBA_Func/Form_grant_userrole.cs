@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,14 +17,13 @@ namespace Phanhe1
     {
         String username = "";
         DataGridViewTextBoxColumn dgvc_TableName_USER = new DataGridViewTextBoxColumn();
-        DataGridViewTextBoxColumn dgvc_TableName_ROLE = new DataGridViewTextBoxColumn();
-        string[] columnNameuser = new string[] { 
+       
+        string[] columnNameuser = new string[] {
             "Select", "Select (WGO)",
             "Insert", "Insert (WGO)"
             ,"Update", "Update (WGO)"
             ,"Delete", "Delete (WGO)"};
-        string[] columnNamerole = new string[] {
-            "Select","Insert","Update","Delete"};
+      
 
         DataTable all_TableName;
         DataTable all_privs;
@@ -34,9 +34,7 @@ namespace Phanhe1
             // tạo các cột
             dgvc_TableName_USER.HeaderText = "Table Name";
             dvg_privs_user.Columns.Add(dgvc_TableName_USER);
-            dgvc_TableName_ROLE.HeaderText = "Table Name";
-            dgv_role_privs.Columns.Add(dgvc_TableName_ROLE);
-
+            
 
             for (int i = 0; i < columnNameuser.Length; i++)
             {
@@ -44,12 +42,7 @@ namespace Phanhe1
                 check.HeaderText = columnNameuser[i];
                 dvg_privs_user.Columns.Add(check);
             }
-            for (int i = 0; i < columnNamerole.Length; i++)
-            {
-                DataGridViewCheckBoxColumn checkrole = new DataGridViewCheckBoxColumn();
-                checkrole.HeaderText = columnNamerole[i];
-                dgv_role_privs.Columns.Add(checkrole);
-            }
+            
 
             // lấy tên tất cả bảng
             try
@@ -62,8 +55,8 @@ namespace Phanhe1
             }
             for (int i = 0; i < all_TableName.Rows.Count; i++)
             {
-                dvg_privs_user.Rows.Add(all_TableName.Rows[i].Field<string>(0), false, false,false, false,false, false,false, false);
-                dgv_role_privs.Rows.Add(all_TableName.Rows[i].Field<string>(0), false, false,false, false,false, false, false, false);
+                dvg_privs_user.Rows.Add(all_TableName.Rows[i].Field<string>(0), false, false, false, false, false, false, false, false);
+               
 
             }
 
@@ -85,7 +78,7 @@ namespace Phanhe1
             DataTable all_role = Connectionfunction.GetRoles(username);
             foreach (DataRow row in all_role.Rows)
             {
-                box_role.Items.Add(row["ROLE"].ToString());
+                box_role.Items.Add(row["granted_role"].ToString());
             }
 
             // lấy tất cả user của username này
@@ -99,9 +92,10 @@ namespace Phanhe1
 
         private void button_check_Click(object sender, EventArgs e)
         {
+           
             dvg_privs_user.Rows.Clear();
-
-            String userbox = box_user.Text.Trim().ToUpper();
+            string userbox = box_user.Text.Trim().ToUpper();
+           
             // Hien thi cac quyen ma user/role dang co
             all_privs = Connectionfunction.GetPrivilegeOnTable(userbox);
 
@@ -157,13 +151,13 @@ namespace Phanhe1
 
         string privIsExist;
         string grant_opt;
+        string checkroleusser;
         private void button_grant_Click(object sender, EventArgs e)
         {
             string userbox = box_user.Text.Trim();
-
+                
             //Cap nhat lai quyen cua user/role
-            string[] privName = new string[] { "TABLE NAME", "SELECT", "SELECT","INSERT", "INSERT","UPDATE", "UPDATE" ,"DELETE", "DELETE"};
-
+            string[] privName = new string[] { "TABLE NAME", "SELECT", "SELECT", "INSERT", "INSERT", "UPDATE", "UPDATE", "DELETE", "DELETE" };
 
             for (int i = 0; i < dvg_privs_user.Rows.Count; i++)
             {
@@ -171,18 +165,18 @@ namespace Phanhe1
                 string table_name = (string)dvg_privs_user.Rows[i].Cells[0].Value;
                 for (int j = 1; j < columnNameuser.Length; j++)
                 {
-
                     string priv = privName[j];
 
                     bool isChecked = (bool)dvg_privs_user.Rows[i].Cells[j].Value;
 
+                    
                     if (j % 2 == 0)
                         grant_opt = "YES";
                     else
                         grant_opt = "NO";
-                  
-                    privIsExist = Connectionfunction.CheckIfPrivilegeBelongToUser(userbox,table_name,priv,grant_opt);
-
+                
+                    privIsExist = Connectionfunction.CheckIfPrivilegeBelongToUser(userbox, table_name, priv, grant_opt);
+                   
 
                     if (isChecked == false && privIsExist == "Yes")
                     {
@@ -191,7 +185,7 @@ namespace Phanhe1
                     }
                     if (isChecked == true && privIsExist == "No")
                     {
-                        
+
                         if (j % 2 == 0)
                         {
                             Connectionfunction.GrantPrivs(table_name, userbox, priv, "WITH GRANT OPTION");
@@ -199,11 +193,10 @@ namespace Phanhe1
                         else
                         {
                             Connectionfunction.GrantPrivs(table_name, userbox, priv, "");
-
                         }
                     }
                 }
-               
+
             }
             MessageBox.Show("Gan quyen thanh cong");
         }
@@ -213,17 +206,20 @@ namespace Phanhe1
             init_Data();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void btn_check_role_Click(object sender, EventArgs e)
         {
-            dgv_role_privs.Rows.Clear();
+            dvg_privs_user.Rows.Clear();
 
-            String role_box = box_role.Text.Trim().ToUpper();
+            string role = box_role.Text.Trim();
             // Hien thi cac quyen ma user/role dang co
-            all_privs = Connectionfunction.GetPrivilegeOnTable(role_box);
+            all_privs = Connectionfunction.GetPrivilegeOnTable(role);
 
             for (int i = 0; i < all_TableName.Rows.Count; i++)
             {
-                bool select = false,insert = false,update = false, delete = false;
+                bool select = false, select_withGrantOption = false,
+                    insert = false, insert_withGrantOption = false,
+                    update = false, update_withGrantOption = false,
+                    delete = false, delete_withGrantOption = false;
 
                 foreach (DataRow row in all_privs.Rows)
                 {
@@ -235,69 +231,73 @@ namespace Phanhe1
                         if (privilege == "SELECT")
                         {
                             select = true;
-                            
+                            if (grantable == "YES")
+                                select_withGrantOption = true;
                         }
                         if (privilege == "INSERT")
                         {
                             insert = true;
-                            
+                            if (grantable == "YES")
+                                insert_withGrantOption = true;
                         }
                         if (privilege == "UPDATE")
                         {
                             update = true;
+                            if (grantable == "YES")
+                                update_withGrantOption = true;
                         }
                         if (privilege == "DELETE")
                         {
                             delete = true;
+                            if (grantable == "YES")
+                                delete_withGrantOption = true;
                         }
                     }
                 }
 
-                dgv_role_privs.Rows.Add(all_TableName.Rows[i].Field<string>(0), select,insert,update,delete);
+                dvg_privs_user.Rows.Add(all_TableName.Rows[i].Field<string>(0), select, select_withGrantOption,
+                    insert, insert_withGrantOption,
+                    update, update_withGrantOption,
+                    delete, delete_withGrantOption);
 
             }
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private void btn_role_Click(object sender, EventArgs e)
         {
-            string role_box = box_role.Text.Trim().ToUpper();
+            String rolebx = box_role.Text.Trim();
 
             //Cap nhat lai quyen cua user/role
-            string[] privName = new string[] {"TABLE NAME", "SELECT", "INSERT", "UPDATE", "DELETE" };
+            string[] privName = new string[] { "TABLE NAME", "SELECT", "SELECT", "INSERT", "INSERT", "UPDATE", "UPDATE", "DELETE", "DELETE" };
 
-
-            for (int i = 0; i < dgv_role_privs.Rows.Count; i++)
+            for (int i = 0; i < dvg_privs_user.Rows.Count; i++)
             {
-
-                string table_name = (string)dgv_role_privs.Rows[i].Cells[0].Value;
-                for (int j = 1; j < columnNamerole.Length; j++)
+               
+                string table_name = (string)dvg_privs_user.Rows[i].Cells[0].Value;
+                for (int j = 1; j < columnNameuser.Length; j++)
                 {
-
+                    //Neu la quyen WITH GRANT OPTION va dang xet la Role thi bo qua
+                    if (j % 2 == 0)
+                        continue;
                     string priv = privName[j];
-                    bool isChecked;
-                    if (dgv_role_privs.Rows[i].Cells[j].Value != null)
-                    {
-                        isChecked = true; 
-                        
-                    }
-                    else 
-                    {
-                        isChecked = false; 
 
-                    }
+                    bool isChecked = (bool)dvg_privs_user.Rows[i].Cells[j].Value;
 
-                    
-                    privIsExist = Connectionfunction.CheckIfPrivilegeBelongToRole(role_box,table_name,priv);
+                    grant_opt = "NO";
+
+                    privIsExist = Connectionfunction.CheckIfPrivilegeBelongToRole(rolebx, table_name, priv, grant_opt);
 
 
                     if (isChecked == false && privIsExist == "Yes")
                     {
-                        Connectionfunction.RevokePrivs(table_name, role_box, priv);
+                        Connectionfunction.RevokePrivs(table_name, rolebx, priv);
                         continue;
                     }
                     if (isChecked == true && privIsExist == "No")
                     {
-                        Connectionfunction.GrantPrivs(table_name, role_box, priv, "");
+                       
+                       Connectionfunction.GrantPrivs(table_name, rolebx, priv, "");
+                      
                     }
                 }
 
