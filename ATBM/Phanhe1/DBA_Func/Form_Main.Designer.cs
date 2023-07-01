@@ -212,7 +212,7 @@
             this.view_kiem_tra.Name = "view_kiem_tra";
             this.view_kiem_tra.Size = new System.Drawing.Size(201, 60);
             this.view_kiem_tra.TabIndex = 9;
-            this.view_kiem_tra.Text = "CHECK PRIVILEGES ROLE";
+            this.view_kiem_tra.Text = "CHECK PRIVILEGES SYSTEM ROLE";
             this.view_kiem_tra.Click += new System.EventHandler(this.view_kiem_tra_Click);
             // 
             // guna2PictureBox7
@@ -376,7 +376,7 @@
             this.button_view_information.Name = "button_view_information";
             this.button_view_information.Size = new System.Drawing.Size(203, 54);
             this.button_view_information.TabIndex = 7;
-            this.button_view_information.Text = "CHECK PRIVILEGES USER";
+            this.button_view_information.Text = "CHECK PRIVILEGES SYSTEM USER";
             this.button_view_information.Click += new System.EventHandler(this.button_view_information_Click);
             // 
             // guna2PictureBox2

@@ -257,7 +257,7 @@ namespace Phanhe1
         {
             username = username.ToUpper();
             OracleCommand command = new OracleCommand();
-            command.CommandText = $"SELECT * FROM DBA_TAB_PRIVS WHERE GRANTEE = '{username}' AND TYPE = 'TABLE' ORDER BY TABLE_NAME";
+            command.CommandText = $"SELECT GRANTEE,TABLE_NAME,GRANTOR,PRIVILEGE,GRANTABLE,HIERARCHY,TYPE,INHERITED\r\n  FROM DBA_TAB_PRIVS  \r\n WHERE GRANTEE IN (SELECT granted_role \r\n FROM DBA_ROLE_PRIVS \r\n WHERE GRANTEE = '{username}')\r\nUNION \r\nSELECT GRANTEE,TABLE_NAME,GRANTOR,PRIVILEGE,GRANTABLE,HIERARCHY,TYPE,INHERITED\r\n  FROM DBA_TAB_PRIVS \r\n WHERE GRANTEE = '{username}'";
             command.Connection = Con;
 
             OracleDataAdapter adapter = new OracleDataAdapter(command);
@@ -392,7 +392,6 @@ namespace Phanhe1
             priv = priv.ToUpper();
             grant_opt = grant_opt.ToUpper();
             string result = "";
-
 
             OracleCommand command1 = new OracleCommand();
             command1.CommandText = $"SELECT GRANTEE FROM DBA_TAB_PRIVS WHERE GRANTEE = '{user_name}' AND TABLE_NAME = '{table_name}' AND PRIVILEGE = '{priv}' AND GRANTABLE = '{grant_opt}'";

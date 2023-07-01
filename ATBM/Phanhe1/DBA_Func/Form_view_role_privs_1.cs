@@ -24,7 +24,7 @@ namespace Phanhe1
 
                 Form_view_user_privs_2 newform = new Form_view_user_privs_2();
                 DataGridView dgv1 = newform.GetDataGridView1();
-                DataGridView dgv2 = newform.GetDataGridView2();
+                //DataGridView dgv2 = newform.GetDataGridView2();
 
                 String rolename = textBox1.Text.ToUpper();
 
@@ -39,7 +39,7 @@ namespace Phanhe1
                     DataTable dt1 = Connectionfunction.GetDataToTable("SELECT * FROM role_sys_privs WHERE UPPER(ROLE) =  '" + rolename + "'");
                     DataTable dt2 = Connectionfunction.GetDataToTable("SELECT * FROM role_tab_privs WHERE UPPER(ROLE) = '" + rolename + "'");
                     dgv1.DataSource = dt1;
-                    dgv2.DataSource = dt2;
+                    //dgv2.DataSource = dt2;
 
                     newform.ShowDialog();
                 }

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_grant_userrole));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,12 +40,12 @@
             this.button_user = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btn_role = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_check_role = new Guna.UI2.WinForms.Guna2Button();
             this.box_role = new System.Windows.Forms.ComboBox();
             this.box_user = new System.Windows.Forms.ComboBox();
             this.dvg_privs_user = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btn_check_role = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_role = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
@@ -81,9 +81,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(120, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 31);
+            this.label2.Size = new System.Drawing.Size(174, 31);
             this.label2.TabIndex = 0;
-            this.label2.Text = "CHỌN USER:";
+            this.label2.Text = "CHOOSE USER:";
             // 
             // guna2PictureBox1
             // 
@@ -142,9 +142,9 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label4.Location = new System.Drawing.Point(121, 75);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(149, 31);
+            this.label4.Size = new System.Drawing.Size(173, 31);
             this.label4.TabIndex = 6;
-            this.label4.Text = "CHỌN ROLE:";
+            this.label4.Text = "CHOOSE ROLE:";
             // 
             // guna2Panel2
             // 
@@ -164,6 +164,44 @@
             this.guna2Panel2.Size = new System.Drawing.Size(1041, 128);
             this.guna2Panel2.TabIndex = 1;
             // 
+            // btn_role
+            // 
+            this.btn_role.AutoRoundedCorners = true;
+            this.btn_role.BorderRadius = 15;
+            this.btn_role.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_role.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_role.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_role.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_role.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
+            this.btn_role.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_role.ForeColor = System.Drawing.Color.White;
+            this.btn_role.Location = new System.Drawing.Point(875, 74);
+            this.btn_role.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_role.Name = "btn_role";
+            this.btn_role.Size = new System.Drawing.Size(155, 32);
+            this.btn_role.TabIndex = 13;
+            this.btn_role.Text = "SUBMIT_ROLE";
+            this.btn_role.Click += new System.EventHandler(this.btn_role_Click);
+            // 
+            // btn_check_role
+            // 
+            this.btn_check_role.AutoRoundedCorners = true;
+            this.btn_check_role.BorderRadius = 15;
+            this.btn_check_role.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_check_role.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_check_role.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_check_role.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_check_role.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
+            this.btn_check_role.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_check_role.ForeColor = System.Drawing.Color.White;
+            this.btn_check_role.Location = new System.Drawing.Point(703, 75);
+            this.btn_check_role.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_check_role.Name = "btn_check_role";
+            this.btn_check_role.Size = new System.Drawing.Size(155, 32);
+            this.btn_check_role.TabIndex = 12;
+            this.btn_check_role.Text = "CHECK_ROLE";
+            this.btn_check_role.Click += new System.EventHandler(this.btn_check_role_Click);
+            // 
             // box_role
             // 
             this.box_role.FormattingEnabled = true;
@@ -182,30 +220,30 @@
             // 
             // dvg_privs_user
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dvg_privs_user.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dvg_privs_user.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dvg_privs_user.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(189)))));
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(237)))), ((int)(((byte)(199)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(200)))), ((int)(((byte)(188)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dvg_privs_user.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(237)))), ((int)(((byte)(199)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(200)))), ((int)(((byte)(188)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dvg_privs_user.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dvg_privs_user.ColumnHeadersHeight = 100;
             this.dvg_privs_user.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dvg_privs_user.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dvg_privs_user.DefaultCellStyle = dataGridViewCellStyle3;
             this.dvg_privs_user.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dvg_privs_user.Location = new System.Drawing.Point(13, 2);
             this.dvg_privs_user.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -247,44 +285,6 @@
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(1291, 347);
             this.guna2Panel3.TabIndex = 1;
-            // 
-            // btn_check_role
-            // 
-            this.btn_check_role.AutoRoundedCorners = true;
-            this.btn_check_role.BorderRadius = 15;
-            this.btn_check_role.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_check_role.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_check_role.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_check_role.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_check_role.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
-            this.btn_check_role.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_check_role.ForeColor = System.Drawing.Color.White;
-            this.btn_check_role.Location = new System.Drawing.Point(703, 75);
-            this.btn_check_role.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_check_role.Name = "btn_check_role";
-            this.btn_check_role.Size = new System.Drawing.Size(155, 32);
-            this.btn_check_role.TabIndex = 12;
-            this.btn_check_role.Text = "CHECK_ROLE";
-            this.btn_check_role.Click += new System.EventHandler(this.btn_check_role_Click);
-            // 
-            // btn_role
-            // 
-            this.btn_role.AutoRoundedCorners = true;
-            this.btn_role.BorderRadius = 15;
-            this.btn_role.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_role.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_role.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_role.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_role.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(95)))), ((int)(((byte)(87)))));
-            this.btn_role.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_role.ForeColor = System.Drawing.Color.White;
-            this.btn_role.Location = new System.Drawing.Point(875, 74);
-            this.btn_role.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_role.Name = "btn_role";
-            this.btn_role.Size = new System.Drawing.Size(155, 32);
-            this.btn_role.TabIndex = 13;
-            this.btn_role.Text = "SUBMIT_ROLE";
-            this.btn_role.Click += new System.EventHandler(this.btn_role_Click);
             // 
             // Form_grant_userrole
             // 

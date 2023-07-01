@@ -21,7 +21,7 @@ namespace Phanhe1
         {
             return dataGridView1;
         }
-        public DataGridView GetDataGridView2() {  return dataGridView2;}
+        //public DataGridView GetDataGridView2() {  return dataGridView2;}
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

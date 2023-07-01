@@ -18,11 +18,11 @@ namespace Phanhe1
             return dataGridView1;
         }
 
-        public DataGridView GetDataGridView2()
+        /*//public DataGridView GetDataGridView2()
         {
 
-            return dataGridView2;
-        }
+            //return dataGridView2;
+        }*/
 
 
         public Form_view_user_privs_2()
