@@ -22,7 +22,7 @@ namespace Phanhe1.DBA_Func
         private void Fill_comboBox()
         {
             // lấy tất cả role của username này
-            all_role = Connectionfunction.GetRoles();
+            //all_role = Connectionfunction.GetRoles(username);
             foreach (DataRow row in all_role.Rows)
             {
                 box_user_role.Items.Add(row["ROLE"].ToString());
@@ -35,7 +35,7 @@ namespace Phanhe1.DBA_Func
                 box_user_role.Items.Add(row["USERNAME"].ToString());
             }
 
-            all_TableName = Connectionfunction.GetAll_TableName();
+            all_TableName = Connectionfunction.GetAllTableName();
 
             foreach (DataRow row in all_TableName.Rows)
             {
@@ -115,7 +115,7 @@ namespace Phanhe1.DBA_Func
             }
             else
             {
-                if (check_update.Checked == true)
+                if (CBB_column.SelectedItem != null)
                 {
                     check_update.Checked = false;
                     command.CommandText = $"GRANT UPDATE ({CBB_column.Text.Trim()})  ON {table}  TO {userOrRole_name} WITH GRANT OPTION";

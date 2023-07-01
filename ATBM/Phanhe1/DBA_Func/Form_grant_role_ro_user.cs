@@ -13,15 +13,17 @@ namespace Phanhe1
 {
     public partial class Form_grant_role_ro_user : Form
     {
-        public Form_grant_role_ro_user()
+        string username;
+        public Form_grant_role_ro_user(string username)
         {
             InitializeComponent();
             Fill_comboBox();
+            this.username = username;
         }
         private void Fill_comboBox()
         {
             // lấy tất cả role của username này
-            DataTable all_role = Connectionfunction.GetRoles();
+            DataTable all_role = Connectionfunction.GetRoles(username);
             foreach (DataRow row in all_role.Rows)
             {
                 box_ROLE.Items.Add(row["ROLE"].ToString());

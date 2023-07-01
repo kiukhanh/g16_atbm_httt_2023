@@ -16,13 +16,14 @@ using Phanhe1.Nhân_sự;
 using Phanhe2;
 using WindowsFormsApp1;
 using Phanhe1.Trường_phòng;
+using System.Web.UI;
 
 namespace Phanhe1
 {
     public partial class Login : Form
     {
         Thread t;
-
+        public string USERNAME_;
         String owner = "KHANH";
         string role;
         public Login()
@@ -35,9 +36,10 @@ namespace Phanhe1
         }
         public void open_form_main(object obj)
         {
-
+            
             //Application.Run(new Form_grant_userrole(username));
-            Application.Run(new Form_Main());
+            //Application.Run(new Form_Main(txt_username.Text));
+            Application.Run(new Form_Main(USERNAME_));
         }
         public void open_form_main_nv(object obj)
         {
@@ -59,7 +61,7 @@ namespace Phanhe1
         public void open_grant(object obj)
         {
 
-            Application.Run(new Form_grant_role_ro_user());
+            Application.Run(new Form_grant_role_ro_user(USERNAME_));
         }
         public void open_form_TRUONG_PHONG(object obj)
         {
@@ -74,12 +76,20 @@ namespace Phanhe1
             Application.Run(new Form_TDA());
         }
 
+        public string getUsername()
+        {
+            return USERNAME_;
+        }
+
         private void buton_login_Click(object sender, EventArgs e)
         {
 
             // xử lí login
             String username = txt_username.Text.Trim();
             String password = txt_password.Text.Trim();
+            USERNAME_ = username;
+            
+            
             Connectionfunction.InitConnection_DBA();
             string ora = "SELECT COUNT(*) FROM DBA_ROLE_PRIVS WHERE UPPER(GRANTEE) = '" + txt_username.Text.ToUpper() + "' AND UPPER(GRANTED_ROLE) = 'DBA'";
             
@@ -272,7 +282,7 @@ namespace Phanhe1
                     }
             }
 
-            
+
             txt_username.Clear();
             txt_password.Clear();
         }

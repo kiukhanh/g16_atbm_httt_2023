@@ -266,7 +266,6 @@ D:\OneDrive - VNU-HCMUS\Năm 3\Seminar 6\ATBM HTTT\Code\g16_atbm_httt_2023\ATBM\
 D:\OneDrive - VNU-HCMUS\Năm 3\Seminar 6\ATBM HTTT\Code\g16_atbm_httt_2023\ATBM\Phanhe1\obj\Debug\Phanhe1.NhanVien.Form_NV_PB.resources
 D:\OneDrive - VNU-HCMUS\Năm 3\Seminar 6\ATBM HTTT\Code\g16_atbm_httt_2023\ATBM\Phanhe1\obj\Debug\Phanhe1.Form_MainNV.resources
 D:\OneDrive - VNU-HCMUS\Năm 3\Seminar 6\ATBM HTTT\Code\g16_atbm_httt_2023\ATBM\Phanhe1\obj\Debug\Phanhe1.Form_grant_role_ro_user.resources
-D:\OneDrive - VNU-HCMUS\Năm 3\Seminar 6\ATBM HTTT\Code\g16_atbm_httt_2023\ATBM\Phanhe1\obj\Debug\Phanhe1.Form_grant_userrole.resources
 D:\OneDrive - VNU-HCMUS\Năm 3\Seminar 6\ATBM HTTT\Code\g16_atbm_httt_2023\ATBM\Phanhe1\obj\Debug\Phanhe1.Form_Main.resources
 D:\OneDrive - VNU-HCMUS\Năm 3\Seminar 6\ATBM HTTT\Code\g16_atbm_httt_2023\ATBM\Phanhe1\obj\Debug\Phanhe1.Form_Revoke_Privs.resources
 D:\OneDrive - VNU-HCMUS\Năm 3\Seminar 6\ATBM HTTT\Code\g16_atbm_httt_2023\ATBM\Phanhe1\obj\Debug\Phanhe1.Form_thao_tac.resources
@@ -298,3 +297,5 @@ D:\OneDrive - VNU-HCMUS\Năm 3\Seminar 6\ATBM HTTT\Code\g16_atbm_httt_2023\ATBM\
 D:\OneDrive - VNU-HCMUS\Năm 3\Seminar 6\ATBM HTTT\Code\g16_atbm_httt_2023\ATBM\Phanhe1\obj\Debug\Phanhe1.pdb
 D:\OneDrive - VNU-HCMUS\Năm 3\Seminar 6\ATBM HTTT\Code\g16_atbm_httt_2023\ATBM\Phanhe1\obj\Debug\Phanhe1.DBA_Func.Form_grant_privileges.resources
 D:\OneDrive - VNU-HCMUS\Năm 3\Seminar 6\ATBM HTTT\Code\g16_atbm_httt_2023\ATBM\Phanhe1\obj\Debug\Phanhe1.DBA_Func.Check_Priv.resources
+D:\OneDrive - VNU-HCMUS\Năm 3\Seminar 6\ATBM HTTT\Code\g16_atbm_httt_2023\ATBM\Phanhe1\obj\Debug\Phanhe1.DBA_Func.Form_table_view.resources
+D:\OneDrive - VNU-HCMUS\Năm 3\Seminar 6\ATBM HTTT\Code\g16_atbm_httt_2023\ATBM\Phanhe1\obj\Debug\Phanhe1.Form_grant_userrole.resources

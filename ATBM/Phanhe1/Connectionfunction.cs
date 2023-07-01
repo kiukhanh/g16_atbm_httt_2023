@@ -73,7 +73,7 @@ namespace Phanhe1
 
                         if (ChangePwd_Form.check)
                         {
-                            MessageBox.Show("Đăng nhập thành công");
+                            MessageBox.Show("Đăng nhập thành công","Thông báo");
                             
                         }
                     }
@@ -101,23 +101,7 @@ namespace Phanhe1
             }
 
         }
-        public static void InitConnection_dba_connect(String username, String password)
-        {
-            String connectionString = @"Data Source=localhost:1521/XEPDB1" + ";User ID=" + username.ToUpper() + ";Password=" + password;
-            Con = new OracleConnection();
-            Con.ConnectionString = connectionString;
-
-            try
-            {
-                Con.Open();
-            }
-            catch
-            {
-                MessageBox.Show("Đăng nhập thất bại");
-            }
-            
-
-        }
+        
 
         public static void InitConnection_DBA()
         {
@@ -243,7 +227,7 @@ namespace Phanhe1
         }
 
 
-        public static DataTable GetAll_TableName()
+        public static DataTable GetAllTableName()
         {
 
             OracleCommand command = new OracleCommand();
@@ -298,10 +282,10 @@ namespace Phanhe1
             return dataTable;
         }
 
-        public static DataTable GetRoles()
+        public static DataTable GetRoles(string usn)
         {
             OracleCommand command = new OracleCommand();
-            command.CommandText = "SELECT  ROLE  FROM DBA_ROLES";
+            command.CommandText = $"SELECT DISTINCT(role) FROM ROLE_TAB_PRIVS WHERE OWNER = '{usn}'";
             command.Connection = Con;
 
             OracleDataAdapter adapter = new OracleDataAdapter(command);
@@ -332,18 +316,7 @@ namespace Phanhe1
             return dataTable;
         }
 
-        public static void RevokeRoleFromUser_OR_Role(String role, String user_OR_role) // thu hồi quyền
-        {
-            role = role.ToUpper();
-            user_OR_role = user_OR_role.ToUpper();
-
-
-            OracleCommand command = new OracleCommand();
-            command.CommandText = $"REVOKE {role} FROM {user_OR_role}";
-            command.Connection = Con;
-            command.ExecuteNonQuery();
-            MessageBox.Show("Thu hoi quyen thanh cong", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+       
 
 
         //Ham kiem tra xem role co ton tai trong he thong hay khong
@@ -395,6 +368,22 @@ namespace Phanhe1
             return result;
         }
 
+
+        public static void RevokeRoleFromUser_OR_Role(String role, String user_OR_role) // thu hồi quyền
+        {
+            role = role.ToUpper();
+            user_OR_role = user_OR_role.ToUpper();
+
+
+            OracleCommand command = new OracleCommand();
+            command.CommandText = $"REVOKE {role} FROM {user_OR_role}";
+            command.Connection = Con;
+            command.ExecuteNonQuery();
+            MessageBox.Show("Thu hoi quyen thanh cong", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+
+        
         //Ham Ktra xem quyen nay co thuoc ve user hay khong
         public static string CheckIfPrivilegeBelongToUser(String user_name, String table_name, String priv, String grant_opt)
         {
@@ -426,17 +415,16 @@ namespace Phanhe1
         }
 
         //Ham ktra xem quyen nay co thuoc ve role dang xet hay khong
-        public static string CheckIfPrivilegeBelongToRole(String role_name, String roleTable_name, String priv, String grant_opt)
+        public static string CheckIfPrivilegeBelongToRole(String role_name, String roleTable_name, String priv)
         {
             role_name = role_name.ToUpper();
             roleTable_name = roleTable_name.ToUpper();
             priv = priv.ToUpper();
-            grant_opt = grant_opt.ToUpper();
             string result = "";
 
 
             OracleCommand command1 = new OracleCommand();
-            command1.CommandText = $"SELECT ROLE FROM ROLE_TAB_PRIVS WHERE ROLE = '{role_name}' AND TABLE_NAME = '{roleTable_name}' AND PRIVILEGE = '{priv}' AND GRANTABLE = '{grant_opt}'";
+            command1.CommandText = $"SELECT ROLE FROM ROLE_TAB_PRIVS WHERE ROLE = '{role_name}' AND TABLE_NAME = '{roleTable_name}' AND PRIVILEGE = '{priv}'";
             command1.Connection = Con;
             //command1.ExecuteNonQuery();
 
@@ -458,7 +446,7 @@ namespace Phanhe1
         }
 
         //Ham revoke quyen bat ky ra khoi user/role
-        public static void RevokePrivilegeOnTable(String table_name, String userOrRole_name, String priv)
+        public static void RevokePrivs(String table_name, String userOrRole_name, String priv)
         {
             table_name = table_name.ToUpper();
             userOrRole_name = userOrRole_name.ToUpper();
@@ -473,7 +461,7 @@ namespace Phanhe1
         }
 
         //Ham grant quyen bat ky cho user/role
-        public static void GrantPrivilegeOnTable(String table_name, String userOrRole_name, String priv, string grant_opt)
+        public static void GrantPrivs(String table_name, String userOrRole_name, String priv, string grant_opt)
         {
             table_name = table_name.ToUpper();
             userOrRole_name = userOrRole_name.ToUpper();
@@ -486,6 +474,7 @@ namespace Phanhe1
             command.ExecuteNonQuery();
 
         }
+
 
         //SP gan role cho user/role
         public static void grantRoleToUser_OR_Role(String role, String user_OR_role)

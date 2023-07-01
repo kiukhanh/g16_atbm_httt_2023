@@ -9,17 +9,20 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Phanhe1
 {
     public partial class Form_Main : Form
     {
         Thread t;
-        String username = "", password = "";
-        public Form_Main()
+
+        //String username = "", password = "";
+        public string username_ { get; set; }
+
+        public Form_Main(string usn)
         {
-            //this.username = un;
-            //this.password= pw;
+            username_ = usn;
             InitializeComponent();
         }
 
@@ -31,12 +34,12 @@ namespace Phanhe1
         public void open_form_grantprivileges(object obj)
         {
 
-            Application.Run(new Form_grant_privileges());
+            Application.Run(new Form_grant_userrole(username_));
         }
         public void open_form_grantroletouser(object obj)
         {
 
-            Application.Run(new Form_grant_role_ro_user());
+            Application.Run(new Form_grant_role_ro_user(username_));
         }
         public void open_form_thao_tac(object obj)
         {
@@ -59,6 +62,10 @@ namespace Phanhe1
         private void open_form_audit(object obj)
         {
             Application.Run(new Form_audit());
+        }
+        private void open_form_table(object obj)
+        {
+            Application.Run(new Form_table_view(username_) );
         }
         private void Form_Main_Load(object sender, EventArgs e)
         {
@@ -161,6 +168,15 @@ namespace Phanhe1
             t.SetApartmentState(ApartmentState.STA);
             t.Start();
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            t = new Thread(open_form_table);
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+        }
+
+       
 
         private DialogResult PreClosingConfirmation()
         {
