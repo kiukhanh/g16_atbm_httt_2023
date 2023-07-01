@@ -25,7 +25,7 @@ namespace Phanhe1
 
         public static void InitConnection(String username, String password)
         {
-            String connectionString = @"Data Source=localhost:1521/XEPDB1" + ";User ID=" + username.ToUpper() + ";Password=" + password;
+            String connectionString = @"Data Source=localhost:1521/XE" + ";User ID=" + username.ToUpper() + ";Password=" + password;
             Con = new OracleConnection();
             Con.ConnectionString = connectionString;
             int login_Count = 0;
@@ -65,39 +65,8 @@ namespace Phanhe1
                 if (Con.State == ConnectionState.Open)
                 {
 
-
-                    if (login_Count == 1)
-                    {
-                        ChangePwd_Form changepwd = new ChangePwd_Form();
-                        changepwd.ShowDialog();
-
-                        if (ChangePwd_Form.check)
-                        {
-                            MessageBox.Show("Đăng nhập thành công","Thông báo");
-                            
-                        }
-                    }
-                    else if (login_Count == 15)
-                    {
-                        ChangePwd_Form changepwd = new ChangePwd_Form();
-                        changepwd.ShowDialog();
-
-                        if (ChangePwd_Form.check)
-                        {
-                            MessageBox.Show("Đăng nhập thành công");
-
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Đăng nhập thành công");
-                    }
+                    MessageBox.Show("Đăng nhập thành công!!", "Thông Báo");
                 }
-                else
-                {
-                    MessageBox.Show("Đăng nhập thất bại");
-                }
-                
             }
 
         }
@@ -105,7 +74,7 @@ namespace Phanhe1
 
         public static void InitConnection_DBA()
         {
-            String connectionString = @"Data Source=localhost:1521/XEPDB1;User ID = sys; Password= 20120305;DBA Privilege=SYSDBA;";
+            String connectionString = @"Data Source=localhost:1521/XE;User ID = sys; Password= admin;DBA Privilege=SYSDBA;";
             Con = new OracleConnection();
             Con.ConnectionString = connectionString;
 

@@ -99,8 +99,6 @@ namespace WindowsFormsApp1
             sal_txtbox.Visible = false;
             bonus_txtbox.Visible = false;
             input_bonus.Visible = false;
-            //main_panel_tc.Visible = false;
-
             string query = "SELECT * FROM COMPANY.PHANCONG ORDER BY THOIGIAN ASC";
             OracleDataAdapter adapter = new OracleDataAdapter(query, Connectionfunction.Con);
             DataTable dataTable = new DataTable();
@@ -112,25 +110,27 @@ namespace WindowsFormsApp1
         private void button5_Click(object sender, EventArgs e)
         {
             dataGridView1.Visible = false;
+            bonus_txtbox.Visible = false;
+            input_bonus.Visible = false;
+
+
+            btn_enter.Visible = true;
             input_sal.Visible = true;
             input_usn.Visible = true;
             sal_txtbox.Visible = true;
             usn_txtbox.Visible = true;
-            btn_enter.Visible = true;
-            bonus_txtbox.Visible = false;
-            input_bonus.Visible = false;
-            //main_panel_tc.Visible=false;
-           
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             dataGridView1.Visible = false;
             input_sal.Visible = false;
-            input_usn.Visible = true;
             sal_txtbox.Visible = false;
-            usn_txtbox.Visible = true;
             btn_enter.Visible = true;
+
+            usn_txtbox.Visible = true;
+            input_usn.Visible = true;
+
             bonus_txtbox.Visible = true;
             input_bonus.Visible = true;
         }
@@ -154,32 +154,35 @@ namespace WindowsFormsApp1
         private void btn_enter_Click(object sender, EventArgs e)
         {
             string username = input_usn.Text;
-            string sal = input_sal.Text;
-            string bonus = input_bonus.Text;
+            string sal = null;
+            string bonus = null;
+            if(input_sal.Visible)
+                sal = input_sal.Text;
+            if (input_bonus.Visible)
+                bonus = input_bonus.Text;
 
             try
             {
-               
+                
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = Connectionfunction.Con;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "COMPANY.update_encrypted_luong_phucap";
-
-                cmd.Parameters.Add("p_MANV", OracleDbType.Varchar2).Value = username.ToUpper();
-                if(input_sal.Visible)
+                if (sal != null)
+                {
+                    cmd.CommandText = "COMPANY.update_encrypted_luong";
+                    cmd.Parameters.Add("p_MANV", OracleDbType.Varchar2).Value = username.ToUpper();
                     cmd.Parameters.Add("p_LUONG", OracleDbType.Varchar2).Value = sal;
-                else
-                    cmd.Parameters.Add("p_LUONG", OracleDbType.Varchar2).Value = null;
-                if (input_bonus.Visible)
+                }
+                if(bonus != null)
+                {
+                    cmd.CommandText = "COMPANY.update_encrypted_phucap";
+                    cmd.Parameters.Add("p_MANV", OracleDbType.Varchar2).Value = username.ToUpper();
                     cmd.Parameters.Add("p_PHUCAP", OracleDbType.Varchar2).Value = bonus;
-                else
-                    cmd.Parameters.Add("p_PHUCAP", OracleDbType.Varchar2).Value = null;
+                }
 
 
                 cmd.ExecuteNonQuery();
-                input_sal.Clear();
-                input_bonus.Clear();
-                MessageBox.Show("Update successful!");
+                MessageBox.Show("Update successfully!");
             }
             catch (OracleException ex)
             {
@@ -187,7 +190,9 @@ namespace WindowsFormsApp1
             }
             finally
             {
-                Connectionfunction.Con.Close();
+                input_usn.Clear();
+                input_sal.Clear();
+                input_bonus.Clear();
             }
         }
 
@@ -237,6 +242,59 @@ namespace WindowsFormsApp1
             this.Hide();
             Login form = new Login();
             form.Show();
+        }
+
+        private void input_usn_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Enter1_Click(object sender, EventArgs e)
+        {
+            string username = input_usn.Text;
+            string bonus = input_bonus.Text;
+
+            try
+            {
+
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = Connectionfunction.Con;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "COMPANY.update_encrypted_phucap";
+
+                cmd.Parameters.Add("p_MANV", OracleDbType.Varchar2).Value = username.ToUpper();
+                cmd.Parameters.Add("p_PHUCAP", OracleDbType.Varchar2).Value = bonus;
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Update successfully!");
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                input_usn.Clear();
+                input_bonus.Clear();
+            }
+        }
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            if (PreClosingConfirmation() == System.Windows.Forms.DialogResult.Yes)
+            {
+                Dispose(true);
+                Environment.Exit(0);
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+        private DialogResult PreClosingConfirmation()
+        {
+            DialogResult res = System.Windows.Forms.MessageBox.Show("Are you sure you want to exit?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return res;
         }
     }
 

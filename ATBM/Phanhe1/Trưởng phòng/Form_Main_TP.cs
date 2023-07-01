@@ -106,6 +106,7 @@ namespace Phanhe1.Trường_phòng
             Login form = new Login();
             form.Show();
         }
+
     }
 
 }
