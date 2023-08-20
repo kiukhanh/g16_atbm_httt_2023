@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{97AA0AE4-3991-4397-99AF-4C60B6067E1B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Phanhe1</RootNamespace>
+    <AssemblyName>Phanhe1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.21.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.21.9.0\lib\net462\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.6.0.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DBA_Func\Check_Priv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBA_Func\Check_Priv.Designer.cs">
+      <DependentUpon>Check_Priv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBA_Func\Form_grant_userrole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBA_Func\Form_grant_userrole.designer.cs">
+      <DependentUpon>Form_grant_userrole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBA_Func\Form_table_view.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBA_Func\Form_table_view.Designer.cs">
+      <DependentUpon>Form_table_view.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBA_Func\Form_grant_privileges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBA_Func\Form_grant_privileges.Designer.cs">
+      <DependentUpon>Form_grant_privileges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\ChangePwd_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\ChangePwd_Form.Designer.cs">
+      <DependentUpon>ChangePwd_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connectionfunction.cs" />
+    <Compile Include="NhanVien\Form_Luong_PC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\Form_Luong_PC.Designer.cs">
+      <DependentUpon>Form_Luong_PC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\Form_Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\Form_Password.Designer.cs">
+      <DependentUpon>Form_Password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nhân sự\Form_NS_PB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nhân sự\Form_NS_PB.Designer.cs">
+      <DependentUpon>Form_NS_PB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nhân sự\Form_Main_NS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nhân sự\Form_Main_NS.Designer.cs">
+      <DependentUpon>Form_Main_NS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\Form_NV_PB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\Form_NV_PB.Designer.cs">
+      <DependentUpon>Form_NV_PB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\Form_NV_DA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\Form_NV_DA.Designer.cs">
+      <DependentUpon>Form_NV_DA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\Form_MainNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\Form_MainNV.Designer.cs">
+      <DependentUpon>Form_MainNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBA_Func\Form_Revoke_Privs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBA_Func\Form_Revoke_Privs.Designer.cs">
+      <DependentUpon>Form_Revoke_Privs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBA_Func\Form_thao_tac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBA_Func\Form_thao_tac.Designer.cs">
+      <DependentUpon>Form_thao_tac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBA_Func\Form_view_role_privs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBA_Func\Form_view_role_privs.Designer.cs">
+      <DependentUpon>Form_view_role_privs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBA_Func\Form_view_role_privs_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBA_Func\Form_view_role_privs_1.Designer.cs">
+      <DependentUpon>Form_view_role_privs_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBA_Func\Form_view_role_privs_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBA_Func\Form_view_role_privs_2.Designer.cs">
+      <DependentUpon>Form_view_role_privs_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBA_Func\Form_View_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBA_Func\Form_View_User.Designer.cs">
+      <DependentUpon>Form_View_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBA_Func\Form_grant_role_ro_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBA_Func\Form_grant_role_ro_user.Designer.cs">
+      <DependentUpon>Form_grant_role_ro_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBA_Func\Form_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBA_Func\Form_Main.Designer.cs">
+      <DependentUpon>Form_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBA_Func\Form_view_user_privs_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBA_Func\Form_view_user_privs_1.Designer.cs">
+      <DependentUpon>Form_view_user_privs_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBA_Func\Form_view_user_privs_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBA_Func\Form_view_user_privs_2.Designer.cs">
+      <DependentUpon>Form_view_user_privs_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\Form_NV_NV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\Form_NV_NV.Designer.cs">
+      <DependentUpon>Form_NV_NV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\Form_NV_PC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\Form_NV_PC.Designer.cs">
+      <DependentUpon>Form_NV_PC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nhân sự\Form_NS_NV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nhân sự\Form_NS_NV.Designer.cs">
+      <DependentUpon>Form_NS_NV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Quản lí\Form_QL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản lí\Form_QL.designer.cs">
+      <DependentUpon>Form_QL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tài chính\Form_Main_TC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tài chính\Form_Main_TC.designer.cs">
+      <DependentUpon>Form_Main_TC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trưởng phòng\Form_audit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trưởng phòng\Form_audit.designer.cs">
+      <DependentUpon>Form_audit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trưởng phòng\Form_Main_TP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trưởng phòng\Form_Main_TP.Designer.cs">
+      <DependentUpon>Form_Main_TP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trưởng phòng\FORM_TRUONG_PHONG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trưởng phòng\FORM_TRUONG_PHONG.designer.cs">
+      <DependentUpon>FORM_TRUONG_PHONG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trưởng đề án\Form_TDA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trưởng đề án\Form_TDA.designer.cs">
+      <DependentUpon>Form_TDA.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DBA_Func\Check_Priv.resx">
+      <DependentUpon>Check_Priv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBA_Func\Form_grant_privileges.resx">
+      <DependentUpon>Form_grant_privileges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBA_Func\Form_grant_userrole.resx">
+      <DependentUpon>Form_grant_userrole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBA_Func\Form_table_view.resx">
+      <DependentUpon>Form_table_view.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\ChangePwd_Form.resx">
+      <DependentUpon>ChangePwd_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\Form_Luong_PC.resx">
+      <DependentUpon>Form_Luong_PC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\Form_NV_PB.resx">
+      <DependentUpon>Form_NV_PB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\Form_MainNV.resx">
+      <DependentUpon>Form_MainNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBA_Func\Form_grant_role_ro_user.resx">
+      <DependentUpon>Form_grant_role_ro_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBA_Func\Form_Main.resx">
+      <DependentUpon>Form_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBA_Func\Form_Revoke_Privs.resx">
+      <DependentUpon>Form_Revoke_Privs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBA_Func\Form_thao_tac.resx">
+      <DependentUpon>Form_thao_tac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBA_Func\Form_view_role_privs.resx">
+      <DependentUpon>Form_view_role_privs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBA_Func\Form_view_role_privs_1.resx">
+      <DependentUpon>Form_view_role_privs_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBA_Func\Form_view_role_privs_2.resx">
+      <DependentUpon>Form_view_role_privs_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBA_Func\Form_View_User.resx">
+      <DependentUpon>Form_View_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBA_Func\Form_view_user_privs_1.resx">
+      <DependentUpon>Form_view_user_privs_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBA_Func\Form_view_user_privs_2.resx">
+      <DependentUpon>Form_view_user_privs_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\Form_NV_DA.resx">
+      <DependentUpon>Form_NV_DA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\Form_NV_NV.resx">
+      <DependentUpon>Form_NV_NV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\Form_NV_PC.resx">
+      <DependentUpon>Form_NV_PC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\Form_Password.resx">
+      <DependentUpon>Form_Password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nhân sự\Form_Main_NS.resx">
+      <DependentUpon>Form_Main_NS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nhân sự\Form_NS_NV.resx">
+      <DependentUpon>Form_NS_NV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nhân sự\Form_NS_PB.resx">
+      <DependentUpon>Form_NS_PB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Quản lí\Form_QL.resx">
+      <DependentUpon>Form_QL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tài chính\Form_Main_TC.resx">
+      <DependentUpon>Form_Main_TC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trưởng phòng\Form_audit.resx">
+      <DependentUpon>Form_audit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trưởng phòng\Form_Main_TP.resx">
+      <DependentUpon>Form_Main_TP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trưởng phòng\FORM_TRUONG_PHONG.resx">
+      <DependentUpon>FORM_TRUONG_PHONG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trưởng đề án\Form_TDA.resx">
+      <DependentUpon>Form_TDA.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Oracle.ManagedDataAccess.Client.Configuration.Section.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\user %281%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets'))" />
+  </Target>
+</Project>
